@@ -38,6 +38,14 @@ int desempilhar(pilha_t *p) {
     return valor;
 }
 
+int topo(pilha_t *p) {
+    if (p->topo == -1) {
+        printf("Erro: A pilha está vazia.\n");
+        return -1;
+    }
+    return p->elementos[p->topo];
+}
+
 int tamanho(pilha_t *p) {
     return p->topo + 1;
 }
