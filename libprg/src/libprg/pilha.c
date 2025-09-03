@@ -42,7 +42,8 @@ int tamanho(pilha_t *p) {
     return p->topo + 1;
 }
 
-void vazia() {
-
+int vazia(pilha_t *p) {
+    if (p->topo == -1)
+        return 0;
+    return -1;
 }
-*/
