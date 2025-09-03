@@ -47,3 +47,12 @@ int vazia(pilha_t *p) {
         return 0;
     return -1;
 }
+
+void destruir_pilha(pilha_t *p) {
+    if (p == NULL) {
+        printf("Erro: ponteiro da pilha é NULL.\n");
+        return;
+    }
+    free(p->elementos);
+    free(p);
+}
