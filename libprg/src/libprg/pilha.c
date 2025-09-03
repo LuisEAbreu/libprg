@@ -17,6 +17,7 @@ pilha_t *criar_pilha(int capacidade) {
     p->capacidade = capacidade;
     return p;
 }
+
 int empilhar(pilha_t *p, int valor) {
     if (p->topo == p->capacidade-1) {
         printf("Erro: A pilha está cheia (Overflow).\n");
@@ -27,8 +28,14 @@ int empilhar(pilha_t *p, int valor) {
     return 0;
 }
 
-void desempilhar() {
-
+int desempilhar(pilha_t *p) {
+    if (p->topo == -1) {
+        printf("Erro: A pilha está vazia (Underflow).\n");
+        return -1;
+    }
+    int valor = p->elementos[p->topo];
+    p->topo--;
+    return valor;
 }
 
 void tamanho() {
