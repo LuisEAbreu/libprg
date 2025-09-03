@@ -38,8 +38,8 @@ int desempilhar(pilha_t *p) {
     return valor;
 }
 
-void tamanho() {
-
+int tamanho(pilha_t *p) {
+    return p->topo + 1;
 }
 
 void vazia() {
