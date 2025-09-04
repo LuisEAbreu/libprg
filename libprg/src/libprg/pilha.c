@@ -19,20 +19,16 @@ pilha_t *criar_pilha(int capacidade) {
 }
 
 int empilhar(pilha_t *p, int valor) {
-    if (p->topo == p->capacidade-1) {
-        printf("Erro: A pilha está cheia (Overflow).\n");
+    if (p->topo == p->capacidade-1)
         return -1;
-    }
     p->topo++;
     p->elementos[p->topo] = valor;
     return 0;
 }
 
 int desempilhar(pilha_t *p) {
-    if (p->topo == -1) {
-        printf("Erro: A pilha está vazia (Underflow).\n");
+    if (p->topo == -1)
         return -1;
-    }
     int valor = p->elementos[p->topo];
     p->topo--;
     return valor;
@@ -40,7 +36,6 @@ int desempilhar(pilha_t *p) {
 
 int topo(pilha_t *p) {
     if (p->topo == -1) {
-        printf("Erro: A pilha está vazia.\n");
         return -1;
     }
     return p->elementos[p->topo];
@@ -56,21 +51,10 @@ int vazia(pilha_t *p) {
     return -1;
 }
 
-void destruir_pilha(pilha_t *p) {
-    if (p == NULL) {
-        printf("Erro: ponteiro da pilha é NULL.\n");
-        return;
-    }
+int destruir_pilha(pilha_t *p) {
+    if (p == NULL)
+        return -1;
     free(p->elementos);
     free(p);
-}
-
-void imprimir_pilha(pilha_t *p) {
-    if (p->topo == -1) {
-        printf("Erro: Pilha vazia.\n");
-        return;
-    }
-    for (int i = 0; i <= p->topo; i++)
-        printf("%d ", p->elementos[i]);
-    printf("\n");
+    return 0;
 }
