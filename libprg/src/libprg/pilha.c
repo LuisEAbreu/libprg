@@ -64,3 +64,11 @@ void destruir_pilha(pilha_t *p) {
     free(p->elementos);
     free(p);
 }
+
+void imprimir_pilha(pilha_t *p) {
+    if (p->topo == -1)
+        printf("Erro: Pilha vazia.\n");
+    for (int i = 0; i <= p->topo; i++)
+        printf("%d ", p->elementos[i]);
+    printf("\n");
+}
