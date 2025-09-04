@@ -10,6 +10,5 @@ int topo(pilha_t *p);
 int tamanho(pilha_t *p);
 int vazia(pilha_t *p);
 void destruir_pilha(pilha_t *p);
-void imprimir_pilha(pilha_t *p);
 
 #endif
