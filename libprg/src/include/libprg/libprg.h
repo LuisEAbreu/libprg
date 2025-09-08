@@ -9,6 +9,6 @@ int desempilhar(pilha_t *p);
 int topo(pilha_t *p);
 int tamanho(pilha_t *p);
 int vazia(pilha_t *p);
-void destruir_pilha(pilha_t *p);
+int destruir_pilha(pilha_t *p);
 
 #endif
