@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "libprg/libprg.h"
 #include <stdlib.h>
 
@@ -21,6 +22,10 @@ fila_t *criar_fila(int capacidade) {
 void enfileirar(fila_t *fila, int valor) {
     fila->elementos[fila->fim] = valor;
     fila->fim++;
+}
+
+bool cheia(fila_t *fila) {
+    return fila->tamanho==fila->capacidade;
 }
 // desenfileirar
 // inicio
