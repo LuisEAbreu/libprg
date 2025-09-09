@@ -13,6 +13,10 @@ int vazia(pilha_t *p);
 int destruir_pilha(pilha_t *p);
 
 /*--FILA--*/
+typedef struct fila fila_t;
 
+pilha_t *criar_pilha(int capacidade);
+void enfileirar(fila_t *fila, int valor);
+bool cheia(fila_t *fila);
 
 #endif
