@@ -1,3 +1,7 @@
-//
-// Created by aluno on 09/09/2025.
-//
+// criar_fila
+// enfileirar
+// desenfileirar
+// inicio
+// fim
+// tamanho
+// destruir_fila
