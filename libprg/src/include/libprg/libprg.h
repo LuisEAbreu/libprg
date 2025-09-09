@@ -15,7 +15,7 @@ int destruir_pilha(pilha_t *p);
 /*--FILA--*/
 typedef struct fila fila_t;
 
-pilha_t *criar_fila(int capacidade);
+fila_t *criar_fila(int capacidade);
 void enfileirar(fila_t *fila, int valor);
 bool cheia(fila_t *fila);
 
