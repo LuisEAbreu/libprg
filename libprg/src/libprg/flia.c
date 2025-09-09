@@ -18,7 +18,10 @@ fila_t *criar_fila(int capacidade) {
     f->capacidade = capacidade;
     return f;
 }
-// enfileirar
+void enfileirar(fila_t *fila, int valor) {
+    fila->elementos[fila->fim] = valor;
+    fila->fim++;
+}
 // desenfileirar
 // inicio
 // fim
