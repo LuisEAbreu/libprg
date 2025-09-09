@@ -20,6 +20,9 @@ fila_t *criar_fila(int capacidade) {
     return f;
 }
 void enfileirar(fila_t *fila, int valor) {
+    if (cheia(fila)) {
+        exit(EXIT_FAILURE);
+    }
     fila->elementos[fila->fim] = valor;
     fila->fim++;
     fila->tamanho++;
