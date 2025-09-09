@@ -22,6 +22,7 @@ fila_t *criar_fila(int capacidade) {
 void enfileirar(fila_t *fila, int valor) {
     fila->elementos[fila->fim] = valor;
     fila->fim++;
+    fila->tamanho++;
 }
 
 bool cheia(fila_t *fila) {
