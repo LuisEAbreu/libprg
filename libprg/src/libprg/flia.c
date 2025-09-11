@@ -47,7 +47,7 @@ int desenfileirar(fila_t *fila) {
 }
 
 int inicio(fila_t *fila){
-    return fila->inicio;
+    return fila->elementos[fila->inicio];
 }
 // fim
 // tamanho
