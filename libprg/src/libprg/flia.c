@@ -31,7 +31,10 @@ void enfileirar(fila_t *fila, int valor) {
 bool cheia(fila_t *fila) {
     return fila->tamanho>=fila->capacidade;
 }
-// desenfileirar
+
+bool fila_vazia(fila_t *fila) {
+    return fila->tamanho<=0;
+}
 // inicio
 // fim
 // tamanho
