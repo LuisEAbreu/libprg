@@ -35,6 +35,16 @@ bool cheia(fila_t *fila) {
 bool fila_vazia(fila_t *fila) {
     return fila->tamanho<=0;
 }
+
+int desenfileirar(fila_t *fila) {
+    if (fila_vazia(fila)) {
+        exit(EXIT_FAILURE);
+    }
+    int valor = fila->elementos[fila->inicio];
+    fila->inicio = (fila->inicio + 1) % fila->capacidade;
+    fila->tamanho--;
+    return valor;
+}
 // inicio
 // fim
 // tamanho
