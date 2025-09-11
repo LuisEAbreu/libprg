@@ -24,7 +24,7 @@ void enfileirar(fila_t *fila, int valor) {
         exit(EXIT_FAILURE);
     }
     fila->elementos[fila->fim] = valor;
-    fila->fim++;
+    fila->fim = (fila->fim + 1) % fila->capacidade;
     fila->tamanho++;
 }
 
