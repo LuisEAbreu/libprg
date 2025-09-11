@@ -18,5 +18,10 @@ typedef struct fila fila_t;
 fila_t *criar_fila(int capacidade);
 void enfileirar(fila_t *fila, int valor);
 bool cheia(fila_t *fila);
+bool fila_vazia(fila_t *fila);
+int desenfileirar(fila_t *fila);
+int inicio(fila_t *fila);
+int fim(fila_t *fila);
+void destruir_fila(fila_t *fila);
 
 #endif
