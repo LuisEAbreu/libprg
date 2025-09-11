@@ -29,7 +29,7 @@ void enfileirar(fila_t *fila, int valor) {
 }
 
 bool cheia(fila_t *fila) {
-    return fila->tamanho==fila->capacidade;
+    return fila->tamanho>=fila->capacidade;
 }
 // desenfileirar
 // inicio
