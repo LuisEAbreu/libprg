@@ -54,4 +54,8 @@ int fim(fila_t *fila){
     return fila->elementos[fila->fim];
 }
 // tamanho
-// destruir_fila
+
+void destruir_fila(fila_t *fila){
+    free(fila->elementos);
+    free(fila);
+}
