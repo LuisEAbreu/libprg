@@ -46,7 +46,18 @@ int buscar_na_lista(lista_linear_t *lista, int valor) {
     return -1;
 }
 
-// remover
-// vazia
-// cheia
+int remover_da_lista(lista_linear_t *lista, int valor) {
+    if (lista_linear_vazia(lista))
+        exit(EXIT_FAILURE);
+
+    int indice = buscar_na_lista(lista, valor);
+
+    if (indice!=-1) {
+        lista->elementos[indice] = lista->elementos[lista->tamanho];
+        lista->tamanho--;
+        return 0;
+    }
+    return -1;
+}
+
 // destruir
