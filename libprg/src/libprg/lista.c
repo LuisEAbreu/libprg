@@ -20,6 +20,14 @@ bool lista_linear_cheia(lista_linear_t *lista) {
     return lista->tamanho >= lista->capacidade;
 }
 
+void inserir(lista_linear_t *lista, int valor) {
+    if (lista_linear_cheia(lista))
+        exit(EXIT_FAILURE);
+
+    lista->elementos[lista->tamanho] = valor;
+    lista->tamanho++;
+}
+
 // buscar
 // remover
 // vazia
