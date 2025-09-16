@@ -22,6 +22,7 @@ bool fila_vazia(fila_t *fila);
 int desenfileirar(fila_t *fila);
 int inicio(fila_t *fila);
 int fim(fila_t *fila);
+int tamanho(fila_t *fila);
 void destruir_fila(fila_t *fila);
 
 #endif
