@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
@@ -14,7 +15,11 @@ lista_linear_t *criar_lista_linear(int capacidade) {
 
     return lista;
 }
-// inserir
+
+bool lista_linear_cheia(lista_linear_t *lista) {
+    return lista->tamanho >= lista->capacidade;
+}
+
 // buscar
 // remover
 // vazia
