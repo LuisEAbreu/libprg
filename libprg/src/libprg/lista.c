@@ -32,6 +32,20 @@ bool lista_linear_vazia(lista_linear_t *lista) {
     return lista->tamanho <= 0;
 }
 
+int buscar_na_lista(lista_linear_t *lista, int valor) {
+    if (lista_linear_vazia(lista))
+        exit(EXIT_FAILURE);
+
+    int indice=0;
+
+    while (indice < lista->tamanho) {
+        if (lista->elementos[indice] == valor)
+            return indice;
+        indice++;
+    }
+    return -1;
+}
+
 // remover
 // vazia
 // cheia
