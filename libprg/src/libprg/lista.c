@@ -60,4 +60,7 @@ int remover_da_lista(lista_linear_t *lista, int valor) {
     return -1;
 }
 
-// destruir
+void destruir_lista(lista_linear_t *lista){
+    free(lista->elementos);
+    free(lista);
+}
