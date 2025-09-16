@@ -53,7 +53,10 @@ int inicio(fila_t *fila){
 int fim(fila_t *fila){
     return fila->elementos[fila->fim];
 }
-// tamanho
+
+int tamanho(fila_t *fila){
+    return fila->tamanho;
+}
 
 void destruir_fila(fila_t *fila){
     free(fila->elementos);
