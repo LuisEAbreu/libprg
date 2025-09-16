@@ -28,7 +28,10 @@ void inserir(lista_linear_t *lista, int valor) {
     lista->tamanho++;
 }
 
-// buscar
+bool lista_linear_vazia(lista_linear_t *lista) {
+    return lista->tamanho <= 0;
+}
+
 // remover
 // vazia
 // cheia
