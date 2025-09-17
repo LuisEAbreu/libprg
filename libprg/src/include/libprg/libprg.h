@@ -17,12 +17,12 @@ typedef struct fila fila_t;
 
 fila_t *criar_fila(int capacidade);
 void enfileirar(fila_t *fila, int valor);
-bool cheia(fila_t *fila);
+bool fila_cheia(fila_t *fila);
 bool fila_vazia(fila_t *fila);
 int desenfileirar(fila_t *fila);
-int inicio(fila_t *fila);
-int fim(fila_t *fila);
-int tamanho(fila_t *fila);
+int inicio_da_fila(fila_t *fila);
+int fim_da_fila(fila_t *fila);
+int tamanho_da_fila(fila_t *fila);
 void destruir_fila(fila_t *fila);
 
 /*--LISTA--*/

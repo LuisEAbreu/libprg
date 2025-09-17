@@ -20,7 +20,7 @@ fila_t *criar_fila(int capacidade) {
     return f;
 }
 void enfileirar(fila_t *fila, int valor) {
-    if (cheia(fila)) {
+    if (fila_cheia(fila)) {
         exit(EXIT_FAILURE);
     }
     fila->elementos[fila->fim] = valor;
@@ -28,7 +28,7 @@ void enfileirar(fila_t *fila, int valor) {
     fila->tamanho++;
 }
 
-bool cheia(fila_t *fila) {
+bool fila_cheia(fila_t *fila) {
     return fila->tamanho>=fila->capacidade;
 }
 
@@ -46,15 +46,15 @@ int desenfileirar(fila_t *fila) {
     return valor;
 }
 
-int inicio(fila_t *fila){
+int inicio_da_fila(fila_t *fila){
     return fila->elementos[fila->inicio];
 }
 
-int fim(fila_t *fila){
+int fim_da_fila(fila_t *fila){
     return fila->elementos[fila->fim];
 }
 
-int tamanho(fila_t *fila){
+int tamanho_da_fila(fila_t *fila){
     return fila->tamanho;
 }
 
