@@ -51,7 +51,8 @@ int inicio_da_fila(fila_t *fila){
 }
 
 int fim_da_fila(fila_t *fila){
-    return fila->elementos[fila->fim];
+    int indice = (fila->fim - 1 + fila->capacidade) % fila->capacidade;
+    return fila->elementos[indice];
 }
 
 int tamanho_da_fila(fila_t *fila){
