@@ -25,7 +25,7 @@ int fim_da_fila(fila_t *fila);
 int tamanho_da_fila(fila_t *fila);
 void destruir_fila(fila_t *fila);
 
-/*--LISTA--*/
+/*--LISTA LINEAR--*/
 typedef struct lista_linear lista_linear_t;
 
 lista_linear_t *criar_lista_linear(int capacidade);
