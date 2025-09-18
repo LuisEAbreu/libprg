@@ -54,7 +54,7 @@ int remover_da_lista(lista_linear_t *lista, int valor) {
     int indice = buscar_na_lista(lista, valor);
 
     if (indice!=-1) {
-        lista->elementos[indice] = lista->elementos[lista->tamanho];
+        lista->elementos[indice] = lista->elementos[lista->tamanho - 1];
         lista->tamanho--;
         return 0;
     }
