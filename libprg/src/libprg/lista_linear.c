@@ -59,7 +59,7 @@ int busca_binaria(lista_linear_t *lista, int valor) {
     while (inicio <= fim) {
         int meio = inicio + (fim - inicio) / 2;
 
-        if (lista->elementos[inicio] == valor)
+        if (lista->elementos[meio] == valor)
             return meio;
         else if (lista->elementos[meio] < valor)
             fim = meio - 1;
