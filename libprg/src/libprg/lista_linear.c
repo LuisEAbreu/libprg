@@ -57,7 +57,14 @@ int busca_binaria(lista_linear_t *lista, int valor) {
 }
 
 int busca_linear(lista_linear_t *lista, int valor) {
-    return 1;
+    int indice=0;
+
+    while (indice < lista->tamanho) {
+        if (lista->elementos[indice] == valor)
+            return indice;
+        indice++;
+    }
+    return -1;
 }
 
 int buscar_na_lista(lista_linear_t *lista, int valor) {
