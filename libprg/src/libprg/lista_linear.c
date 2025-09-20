@@ -108,3 +108,7 @@ void destruir_lista(lista_linear_t *lista){
     free(lista->elementos);
     free(lista);
 }
+
+int topo_da_lista(lista_linear_t *lista) {
+    return lista->elementos[0];
+}
