@@ -53,7 +53,20 @@ bool lista_linear_vazia(lista_linear_t *lista) {
 }
 
 int busca_binaria(lista_linear_t *lista, int valor) {
-    return 1;
+    int inicio = 0,
+        fim = lista->tamanho - 1;
+
+    while (inicio <= fim) {
+        int meio = inicio + (fim - inicio) / 2;
+
+        if (lista->elementos[inicio] == valor)
+            return meio;
+        else if (lista->elementos[meio] < valor)
+            fim = meio - 1;
+        else
+            inicio = meio + 1;
+    }
+    return -1;
 }
 
 int busca_linear(lista_linear_t *lista, int valor) {
