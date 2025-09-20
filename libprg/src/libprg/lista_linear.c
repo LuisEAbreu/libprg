@@ -23,12 +23,29 @@ bool lista_linear_cheia(lista_linear_t *lista) {
     return lista->tamanho >= lista->capacidade;
 }
 
+void inserir_ordenada(lista_linear_t *lista, int valor) {
+    for (int i = lista->tamanho - 1; i >= 0; i--) {
+        if (lista->elementos[i]<valor) {
+            lista->elementos[i + 1] = valor;
+            break;
+        }
+        lista->elementos[i + 1] = lista->elementos[i];
+    }
+    lista->tamanho++;
+}
+
+void inserir_nao_ordenada(lista_linear_t *lista, int valor) {
+    lista->elementos[lista->tamanho] = valor;
+    lista->tamanho++;
+}
+
 void inserir(lista_linear_t *lista, int valor) {
     if (lista_linear_cheia(lista))
         exit(EXIT_FAILURE);
-
-    lista->elementos[lista->tamanho] = valor;
-    lista->tamanho++;
+    if (lista->ordenada)
+        inserir_ordenada(lista, valor);
+    else
+        inserir_nao_ordenada(lista, valor);
 }
 
 bool lista_linear_vazia(lista_linear_t *lista) {
