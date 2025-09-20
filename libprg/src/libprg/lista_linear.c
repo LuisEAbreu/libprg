@@ -6,6 +6,7 @@ typedef struct lista_linear {
     int *elementos,
         tamanho,
         capacidade;
+    bool ordenada;
 }lista_linear_t;
 
 lista_linear_t *criar_lista_linear(int capacidade) {
