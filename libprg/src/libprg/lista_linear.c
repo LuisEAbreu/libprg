@@ -112,3 +112,7 @@ void destruir_lista(lista_linear_t *lista){
 int topo_da_lista(lista_linear_t *lista) {
     return lista->elementos[0];
 }
+
+int tamanho_da_lista(lista_linear_t *lista) {
+    return lista->qtd;
+}
