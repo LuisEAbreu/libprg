@@ -114,5 +114,5 @@ int elemento_da_lista(lista_linear_t *lista, int indice) {
 }
 
 int tamanho_da_lista(lista_linear_t *lista) {
-    return lista->qtd;
+    return lista->tamanho;
 }
