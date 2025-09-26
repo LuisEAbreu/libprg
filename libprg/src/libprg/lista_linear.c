@@ -24,13 +24,17 @@ bool lista_linear_cheia(lista_linear_t *lista) {
 }
 
 void inserir_ordenada(lista_linear_t *lista, int valor) {
-    for (int i = lista->tamanho - 1; i >= 0; i--) {
-        if (lista->elementos[i]<valor) {
+    int i;
+    for (i = lista->tamanho - 1; i >= 0; i--) {
+        if (lista->elementos[i] < valor) {
             lista->elementos[i + 1] = valor;
             break;
         }
         lista->elementos[i + 1] = lista->elementos[i];
     }
+    if (i < 0)
+        lista->elementos[0] = valor;
+
     lista->tamanho++;
 }
 
