@@ -94,10 +94,7 @@ int buscar_na_lista(lista_linear_t *lista, int valor) {
     return busca_linear(lista, valor);
 }
 
-int remover_da_lista(lista_linear_t *lista, int valor) {
-    if (lista_linear_vazia(lista))
-        exit(EXIT_FAILURE);
-
+int remover_nao_ordenada(lista_linear_t *lista, int valor) {
     int indice = buscar_na_lista(lista, valor);
 
     if (indice!=-1) {
@@ -106,6 +103,20 @@ int remover_da_lista(lista_linear_t *lista, int valor) {
         return 0;
     }
     return -1;
+}
+
+int remover_ordenada(lista_linear_t *lista, int valor) {
+    return -1;
+}
+
+int remover_da_lista(lista_linear_t *lista, int valor) {
+    if (lista_linear_vazia(lista))
+        exit(EXIT_FAILURE);
+
+    if (lista->ordenada)
+        return remover_ordenada(lista, valor);
+
+    return remover_nao_ordenada(lista, valor);
 }
 
 void destruir_lista(lista_linear_t *lista){
