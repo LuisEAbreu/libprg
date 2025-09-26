@@ -106,6 +106,15 @@ int remover_nao_ordenada(lista_linear_t *lista, int valor) {
 }
 
 int remover_ordenada(lista_linear_t *lista, int valor) {
+    int indice = buscar_na_lista(lista, valor);
+
+    if (indice!=-1) {
+        for (int i=indice; i<lista->tamanho-1; i++)
+            lista->elementos[i] = lista->elementos[i+1];
+
+        lista->tamanho--;
+        return 0;
+    }
     return -1;
 }
 
