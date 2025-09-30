@@ -49,5 +49,6 @@ void remover_lista_encadeada(no_t **inicio, int valor);
 /*--LISTA ENCADEADA CIRCULAR--*/
 
 no_t *criar_lista_encadeada_circular(int valor);
+void adicionar_circular(no_t **inicio, int valor);
 
 #endif

@@ -28,6 +28,18 @@ void adicionar_no(no_t **inicio, int valor) {
     *inicio = novo_no;
 }
 
+void adicionar_circular(no_t **inicio, int valor) {
+    no_t *novo_no = criar_lista_encadeada_circular(valor);
+    novo_no->proximo = *inicio;
+
+    no_t *ultimo = *inicio;
+
+    while (ultimo->proximo != *inicio)
+        ultimo = ultimo->proximo;
+
+    ultimo->proximo = novo_no;
+}
+
 no_t *buscar_lista_encadeada(no_t **inicio, int valor) {
     no_t *atual = *inicio;
 
