@@ -14,6 +14,14 @@ no_t *criar_lista_encadeada(int valor) {
     return no;
 }
 
+no_t *criar_lista_encadeada_circular(int valor) {
+    no_t *no = malloc(sizeof(no_t));
+    no->valor = valor;
+    no->proximo = no;
+
+    return no;
+}
+
 void adicionar_no(no_t **inicio, int valor) {
     no_t *novo_no = criar_lista_encadeada(valor);
     novo_no->proximo = *inicio;
