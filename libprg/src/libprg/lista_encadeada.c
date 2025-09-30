@@ -32,3 +32,22 @@ no_t *buscar_lista_encadeada(no_t **inicio, int valor) {
 
     return NULL;
 }
+
+void remover_lista_encadeada(no_t **inicio, int valor) {
+    no_t *atual = *inicio;
+    no_t *anterior = NULL;
+
+    while (atual) {
+        if (atual->valor == valor) {
+            if (anterior)   // (anterior != NULL)
+                anterior->proximo = atual->proximo;
+            else
+                *inicio = atual->proximo;
+
+            free(atual);
+            break;
+        }
+        anterior = atual;
+        atual = atual->proximo;
+    }
+}
