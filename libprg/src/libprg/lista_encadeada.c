@@ -19,3 +19,16 @@ void adicionar_no(no_t **inicio, int valor) {
     novo_no->proximo = *inicio;
     *inicio = novo_no;
 }
+
+no_t *buscar_lista_encadeada(no_t **inicio, int valor) {
+    no_t *atual = *inicio;
+
+    while (atual) {     // dentro dos parênteses é o equivalente a (atual != NULL)
+        if (atual->valor == valor)
+            return atual;
+
+        atual = atual->proximo;
+    }
+
+    return NULL;
+}
