@@ -38,4 +38,7 @@ void destruir_lista(lista_linear_t *lista);
 int elemento_da_lista(lista_linear_t *lista, int indice);
 int tamanho_da_lista(lista_linear_t *lista);
 
+/*--LISTA ENCADEADA--*/
+typedef struct no no_t;
+
 #endif
