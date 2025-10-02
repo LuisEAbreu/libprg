@@ -71,3 +71,13 @@ void remover_lista_encadeada(no_t **inicio, int valor) {
         atual = atual->proximo;
     }
 }
+
+void destruir_lista_encadeada(no_t **inicio) {
+    no_t *atual = *inicio;
+
+    while (atual) {
+        no_t *proximo = atual->proximo;
+        free(atual);
+        atual = proximo;
+    }
+}
