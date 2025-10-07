@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdbool.h>
 #include "libprg/libprg.h"
 
 typedef struct no {
