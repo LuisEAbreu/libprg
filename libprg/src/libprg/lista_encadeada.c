@@ -108,3 +108,14 @@ int elemento_da_lista_encadeada(no_t **inicio, int indice) {
     }
     return -1;
 }
+
+int tamanho_da_lista_encadeada(no_t **inicio) {
+    no_t *atual = *inicio;
+    int contador = 0;
+
+    while (atual) {
+        atual = atual->proximo;
+        contador++;
+    }
+    return contador;
+}
