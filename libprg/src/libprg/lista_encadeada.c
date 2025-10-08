@@ -94,3 +94,17 @@ void destruir_lista_encadeada_circular(no_t **inicio) {
         atual = proximo;
     }
 }
+
+int elemento_da_lista_encadeada(no_t **inicio, int indice) {
+    no_t *atual = *inicio;
+    int contador = 0;
+
+    while (atual) {
+        if (contador == indice)
+            return atual->valor;
+
+        atual = atual->proximo;
+        contador++;
+    }
+    return -1;
+}
