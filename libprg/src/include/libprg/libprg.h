@@ -55,4 +55,7 @@ no_t *criar_lista_encadeada_circular(int valor);
 void adicionar_circular(no_t **inicio, int valor);
 void destruir_lista_encadeada_circular(no_t **inicio);
 
+/*--LISTA ENCADEADA DUPLA--*/
+typedef struct no_duplo no_duplo_t;
+
 #endif
