@@ -22,3 +22,16 @@ void adicionar_no_duplo(no_duplo_t **inicio, int valor) {
     *inicio = novo_no;
 
 }
+
+no_duplo_t *buscar_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
+    no_duplo_t *atual = *inicio;
+
+    while (atual) {     // dentro dos parênteses é o equivalente a (atual != NULL)
+        if (atual->valor == valor)
+            return atual;
+
+        atual = atual->proximo;
+    }
+
+    return NULL;
+}
