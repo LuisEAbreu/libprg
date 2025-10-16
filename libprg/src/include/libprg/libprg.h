@@ -58,4 +58,6 @@ void destruir_lista_encadeada_circular(no_t **inicio);
 /*--LISTA ENCADEADA DUPLA--*/
 typedef struct no_duplo no_duplo_t;
 
+no_duplo_t *criar_lista_encadeada_dupla(int valor);
+
 #endif
