@@ -35,3 +35,23 @@ no_duplo_t *buscar_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
 
     return NULL;
 }
+
+void remover_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
+    no_duplo_t *atual = *inicio;
+
+    while (atual) {
+        if (atual->valor == valor) {
+            if (atual->anterior != NULL) {
+                atual->anterior->proximo = atual->proximo;
+                atual->proximo->anterior = atual->anterior;
+            }
+            else {
+                *inicio = atual->proximo;
+                (*inicio)->anterior = NULL;
+            }
+            free(atual);
+            break;
+        }
+        atual = atual->proximo;
+    }
+}
