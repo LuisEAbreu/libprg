@@ -128,6 +128,13 @@ int remover_da_lista(lista_linear_t *lista, int valor) {
 
     return remover_nao_ordenada(lista, valor);
 }
+int limitar_posicao(lista_linear_t *lista, int indice) {
+    if (indice > lista->tamanho)
+        return lista->tamanho;
+
+    if (indice < 0)
+        return 0;
+}
 
 void destruir_lista(lista_linear_t *lista){
     free(lista->elementos);
