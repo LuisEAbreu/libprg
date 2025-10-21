@@ -35,6 +35,7 @@ bool lista_linear_vazia(lista_linear_t *lista);
 int buscar_na_lista(lista_linear_t *lista, int valor);
 int remover_da_lista(lista_linear_t *lista, int valor);
 int limitar_posicao(lista_linear_t *lista, int indice);
+int remover_na_posicao_da_lista(lista_linear_t *lista, int indice);
 void destruir_lista(lista_linear_t *lista);
 int elemento_da_lista(lista_linear_t *lista, int indice);
 int inserir_na_posicao_da_lista(lista_linear_t *lista, int valor, int indice);
