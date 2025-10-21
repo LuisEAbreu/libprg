@@ -138,6 +138,16 @@ int elemento_da_lista(lista_linear_t *lista, int indice) {
     return lista->elementos[indice];
 }
 
+int inserir_na_posicao_da_lista(lista_linear_t *lista, int valor, int indice) {
+    if (indice > lista->tamanho)
+        indice = lista->tamanho;
+
+    inserir(lista, valor);
+    lista->elementos[indice] = valor;
+
+    return 0;
+}
+
 int tamanho_da_lista(lista_linear_t *lista) {
     return lista->tamanho;
 }
