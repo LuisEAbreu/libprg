@@ -155,11 +155,10 @@ int elemento_da_lista(lista_linear_t *lista, int indice) {
 }
 
 int inserir_na_posicao_da_lista(lista_linear_t *lista, int valor, int indice) {
-    if (indice > lista->tamanho)
-        indice = lista->tamanho;
+    int posicao = limitar_posicao(lista, indice);
 
     inserir(lista, valor);
-    lista->elementos[indice] = valor;
+    lista->elementos[posicao] = valor;
 
     return 0;
 }
