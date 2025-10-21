@@ -43,13 +43,14 @@ void inserir_nao_ordenada(lista_linear_t *lista, int valor) {
     lista->tamanho++;
 }
 
-void inserir(lista_linear_t *lista, int valor) {
+int inserir(lista_linear_t *lista, int valor) {
     if (lista_linear_cheia(lista))
-        exit(EXIT_FAILURE);
+        return -1;
     if (lista->ordenada)
         inserir_ordenada(lista, valor);
     else
         inserir_nao_ordenada(lista, valor);
+    return 0;
 }
 
 bool lista_linear_vazia(lista_linear_t *lista) {
@@ -86,7 +87,7 @@ int busca_linear(lista_linear_t *lista, int valor) {
 
 int buscar_na_lista(lista_linear_t *lista, int valor) {
     if (lista_linear_vazia(lista))
-        exit(EXIT_FAILURE);
+        return -1;
 
     if (lista->ordenada)
         return busca_binaria(lista, valor);
@@ -120,7 +121,7 @@ int remover_ordenada(lista_linear_t *lista, int valor) {
 
 int remover_da_lista(lista_linear_t *lista, int valor) {
     if (lista_linear_vazia(lista))
-        exit(EXIT_FAILURE);
+        return -1;
 
     if (lista->ordenada)
         return remover_ordenada(lista, valor);

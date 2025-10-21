@@ -16,7 +16,7 @@ int destruir_pilha(pilha_t *p);
 typedef struct fila fila_t;
 
 fila_t *criar_fila(int capacidade);
-void enfileirar(fila_t *fila, int valor);
+int enfileirar(fila_t *fila, int valor);
 bool fila_cheia(fila_t *fila);
 bool fila_vazia(fila_t *fila);
 int desenfileirar(fila_t *fila);
@@ -30,7 +30,7 @@ typedef struct lista_linear lista_linear_t;
 
 lista_linear_t *criar_lista_linear(int capacidade, bool ordenada);
 bool lista_linear_cheia(lista_linear_t *lista);
-void inserir(lista_linear_t *lista, int valor);
+int inserir(lista_linear_t *lista, int valor);
 bool lista_linear_vazia(lista_linear_t *lista);
 int buscar_na_lista(lista_linear_t *lista, int valor);
 int remover_da_lista(lista_linear_t *lista, int valor);
