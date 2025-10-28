@@ -119,3 +119,15 @@ int tamanho_da_lista_encadeada(no_t **inicio) {
     }
     return contador;
 }
+
+int limitar_posicao_encadeada(no_t **inicio, int indice) {
+    int tamanho = tamanho_da_lista_encadeada(inicio);
+
+    if (indice < 0)
+        return 0;
+
+    if (indice > tamanho)
+        return tamanho;
+
+    return indice;
+}
