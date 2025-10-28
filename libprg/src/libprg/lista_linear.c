@@ -143,7 +143,7 @@ int remover_na_posicao_da_lista(lista_linear_t *lista, int indice) {
     int posicao = limitar_posicao(lista, indice);
 
     int valor = lista->elementos[posicao];
-    remover_na_posicao_da_lista(lista, valor);
+    remover_da_lista(lista, valor);
 
     return 0;
 }
