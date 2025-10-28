@@ -131,3 +131,20 @@ int limitar_posicao_encadeada(no_t **inicio, int indice) {
 
     return indice;
 }
+
+void inserir_na_posicao_da_lista_encadeada(no_t **inicio, int valor, int indice) {
+    int posicao = limitar_posicao_encadeada(inicio, indice);
+
+    if (posicao==0) {
+        adicionar_no(inicio,valor);
+        return;
+    }
+    no_t *atual = *inicio;
+
+    for (int i = 0; i < posicao-1; i++)
+        atual = atual->proximo;
+
+    no_t *novo_no = criar_lista_encadeada(valor);
+    novo_no->proximo = atual->proximo;
+    atual->proximo = novo_no;
+}
