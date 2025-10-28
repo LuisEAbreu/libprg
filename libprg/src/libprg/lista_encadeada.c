@@ -148,3 +148,23 @@ void inserir_na_posicao_da_lista_encadeada(no_t **inicio, int valor, int indice)
     novo_no->proximo = atual->proximo;
     atual->proximo = novo_no;
 }
+
+int remover_na_posicao_da_lista_encadeada(no_t **inicio, int indice) {
+    int posicao = limitar_posicao_encadeada(inicio, indice);
+
+    if (*inicio == NULL)
+        return -1;
+
+    no_t *atual = *inicio;
+
+    for (int i = 0; i < posicao; i++)
+        atual = atual->proximo;
+
+    if (atual != NULL) {
+        int valor = atual->valor;
+        remover_lista_encadeada(inicio, valor);
+        return valor;
+    }
+
+    return -1;
+}
