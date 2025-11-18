@@ -45,7 +45,7 @@ int tamanho_da_lista(lista_linear_t *lista);
 typedef struct no no_t;
 
 no_t *criar_lista_encadeada(int valor);
-void adicionar_no(no_t **inicio, int valor);
+void adicionar_lista_encadeada(no_t **inicio, int valor);
 no_t *buscar_lista_encadeada(no_t **inicio, int valor);
 void remover_lista_encadeada(no_t **inicio, int valor);
 void destruir_lista_encadeada(no_t **inicio);
@@ -55,14 +55,14 @@ int tamanho_da_lista_encadeada(no_t **inicio);
 /*--LISTA ENCADEADA CIRCULAR--*/
 
 no_t *criar_lista_encadeada_circular(int valor);
-void adicionar_circular(no_t **inicio, int valor);
+void adicionar_lista_encadeada_circular(no_t **inicio, int valor);
 void destruir_lista_encadeada_circular(no_t **inicio);
 
 /*--LISTA ENCADEADA DUPLA--*/
 typedef struct no_duplo no_duplo_t;
 
 no_duplo_t *criar_lista_encadeada_dupla(int valor);
-void adicionar_no_duplo(no_duplo_t **inicio, int valor);
+void adicionar_lista_encadeada_dupla(no_duplo_t **inicio, int valor);
 no_duplo_t *buscar_lista_encadeada_dupla(no_duplo_t **inicio, int valor);
 void remover_lista_encadeada_dupla(no_duplo_t **inicio, int valor);
 

@@ -23,13 +23,13 @@ no_t *criar_lista_encadeada_circular(int valor) {
     return no;
 }
 
-void adicionar_no(no_t **inicio, int valor) {
+void adicionar_lista_encadeada(no_t **inicio, int valor) {
     no_t *novo_no = criar_lista_encadeada(valor);
     novo_no->proximo = *inicio;
     *inicio = novo_no;
 }
 
-void adicionar_circular(no_t **inicio, int valor) {
+void adicionar_lista_encadeada_circular(no_t **inicio, int valor) {
     no_t *novo_no = criar_lista_encadeada_circular(valor);
     novo_no->proximo = *inicio;
 
@@ -136,7 +136,7 @@ void inserir_na_posicao_da_lista_encadeada(no_t **inicio, int valor, int indice)
     int posicao = limitar_posicao_encadeada(inicio, indice);
 
     if (posicao==0) {
-        adicionar_no(inicio,valor);
+        adicionar_lista_encadeada(inicio,valor);
         return;
     }
     no_t *atual = *inicio;

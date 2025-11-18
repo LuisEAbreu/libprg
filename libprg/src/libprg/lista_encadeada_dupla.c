@@ -15,7 +15,7 @@ no_duplo_t *criar_lista_encadeada_dupla(int valor) {
     return no_duplo;
 }
 
-void adicionar_no_duplo(no_duplo_t **inicio, int valor) {
+void adicionar_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
     no_duplo_t *novo_no = criar_lista_encadeada_dupla(valor);
     novo_no->proximo = *inicio;
     (*inicio)->anterior = novo_no;
