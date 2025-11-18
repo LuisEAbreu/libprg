@@ -42,28 +42,28 @@ int inserir_na_posicao_da_lista(lista_linear_t *lista, int valor, int indice);
 int tamanho_da_lista(lista_linear_t *lista);
 
 /*--LISTA ENCADEADA--*/
-typedef struct no no_t;
+typedef struct lista_encadeada lista_encadeada_t;
 
-no_t *criar_lista_encadeada(int valor);
-void adicionar_lista_encadeada(no_t **inicio, int valor);
-no_t *buscar_lista_encadeada(no_t **inicio, int valor);
-void remover_lista_encadeada(no_t **inicio, int valor);
-void destruir_lista_encadeada(no_t **inicio);
-int elemento_da_lista_encadeada(no_t **inicio, int indice);
-int tamanho_da_lista_encadeada(no_t **inicio);
+lista_encadeada_t *criar_lista_encadeada(int valor);
+void adicionar_lista_encadeada(lista_encadeada_t **inicio, int valor);
+lista_encadeada_t *buscar_lista_encadeada(lista_encadeada_t **inicio, int valor);
+void remover_lista_encadeada(lista_encadeada_t **inicio, int valor);
+void destruir_lista_encadeada(lista_encadeada_t **inicio);
+int elemento_da_lista_encadeada(lista_encadeada_t **inicio, int indice);
+int tamanho_da_lista_encadeada(lista_encadeada_t **inicio);
 
 /*--LISTA ENCADEADA CIRCULAR--*/
 
-no_t *criar_lista_encadeada_circular(int valor);
-void adicionar_lista_encadeada_circular(no_t **inicio, int valor);
-void destruir_lista_encadeada_circular(no_t **inicio);
+lista_encadeada_t *criar_lista_encadeada_circular(int valor);
+void adicionar_lista_encadeada_circular(lista_encadeada_t **inicio, int valor);
+void destruir_lista_encadeada_circular(lista_encadeada_t **inicio);
 
 /*--LISTA ENCADEADA DUPLA--*/
-typedef struct no_duplo no_duplo_t;
+typedef struct lista_encadeada_dupla lista_encadeada_dupla_t;
 
-no_duplo_t *criar_lista_encadeada_dupla(int valor);
-void adicionar_lista_encadeada_dupla(no_duplo_t **inicio, int valor);
-no_duplo_t *buscar_lista_encadeada_dupla(no_duplo_t **inicio, int valor);
-void remover_lista_encadeada_dupla(no_duplo_t **inicio, int valor);
+lista_encadeada_dupla_t *criar_lista_encadeada_dupla(int valor);
+void adicionar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
+lista_encadeada_dupla_t *buscar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
+void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 
 #endif

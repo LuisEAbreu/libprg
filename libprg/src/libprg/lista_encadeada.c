@@ -2,38 +2,38 @@
 #include <stdbool.h>
 #include "libprg/libprg.h"
 
-typedef struct no {
+typedef struct lista_encadeada {
     int valor;
-    struct no *proximo;
-}no_t;
+    struct lista_encadeada *proximo;
+}lista_encadeada_t;
 
-no_t *criar_lista_encadeada(int valor) {
-    no_t *no = malloc(sizeof(no_t));
+lista_encadeada_t *criar_lista_encadeada(int valor) {
+    lista_encadeada_t *no = malloc(sizeof(lista_encadeada_t));
     no->valor = valor;
     no->proximo = NULL;
 
     return no;
 }
 
-no_t *criar_lista_encadeada_circular(int valor) {
-    no_t *no = malloc(sizeof(no_t));
+lista_encadeada_t *criar_lista_encadeada_circular(int valor) {
+    lista_encadeada_t *no = malloc(sizeof(lista_encadeada_t));
     no->valor = valor;
     no->proximo = no;
 
     return no;
 }
 
-void adicionar_lista_encadeada(no_t **inicio, int valor) {
-    no_t *novo_no = criar_lista_encadeada(valor);
+void adicionar_lista_encadeada(lista_encadeada_t **inicio, int valor) {
+    lista_encadeada_t *novo_no = criar_lista_encadeada(valor);
     novo_no->proximo = *inicio;
     *inicio = novo_no;
 }
 
-void adicionar_lista_encadeada_circular(no_t **inicio, int valor) {
-    no_t *novo_no = criar_lista_encadeada_circular(valor);
+void adicionar_lista_encadeada_circular(lista_encadeada_t **inicio, int valor) {
+    lista_encadeada_t *novo_no = criar_lista_encadeada_circular(valor);
     novo_no->proximo = *inicio;
 
-    no_t *ultimo = *inicio;
+    lista_encadeada_t *ultimo = *inicio;
 
     while (ultimo->proximo != *inicio)
         ultimo = ultimo->proximo;
@@ -41,8 +41,8 @@ void adicionar_lista_encadeada_circular(no_t **inicio, int valor) {
     ultimo->proximo = novo_no;
 }
 
-no_t *buscar_lista_encadeada(no_t **inicio, int valor) {
-    no_t *atual = *inicio;
+lista_encadeada_t *buscar_lista_encadeada(lista_encadeada_t **inicio, int valor) {
+    lista_encadeada_t *atual = *inicio;
 
     while (atual) {     // dentro dos parênteses é o equivalente a (atual != NULL)
         if (atual->valor == valor)
@@ -54,9 +54,9 @@ no_t *buscar_lista_encadeada(no_t **inicio, int valor) {
     return NULL;
 }
 
-void remover_lista_encadeada(no_t **inicio, int valor) {
-    no_t *atual = *inicio;
-    no_t *anterior = NULL;
+void remover_lista_encadeada(lista_encadeada_t **inicio, int valor) {
+    lista_encadeada_t *atual = *inicio;
+    lista_encadeada_t *anterior = NULL;
 
     while (atual) {
         if (atual->valor == valor) {
@@ -73,21 +73,21 @@ void remover_lista_encadeada(no_t **inicio, int valor) {
     }
 }
 
-void destruir_lista_encadeada(no_t **inicio) {
-    no_t *atual = *inicio;
+void destruir_lista_encadeada(lista_encadeada_t **inicio) {
+    lista_encadeada_t *atual = *inicio;
 
     while (atual) {
-        no_t *proximo = atual->proximo;
+        lista_encadeada_t *proximo = atual->proximo;
         free(atual);
         atual = proximo;
     }
 }
 
-void destruir_lista_encadeada_circular(no_t **inicio) {
-    no_t *atual = *inicio;
+void destruir_lista_encadeada_circular(lista_encadeada_t **inicio) {
+    lista_encadeada_t *atual = *inicio;
 
     while (atual) {
-        no_t *proximo = atual->proximo;
+        lista_encadeada_t *proximo = atual->proximo;
         free(atual);
         if (proximo==*inicio)
             break;
@@ -95,8 +95,8 @@ void destruir_lista_encadeada_circular(no_t **inicio) {
     }
 }
 
-int elemento_da_lista_encadeada(no_t **inicio, int indice) {
-    no_t *atual = *inicio;
+int elemento_da_lista_encadeada(lista_encadeada_t **inicio, int indice) {
+    lista_encadeada_t *atual = *inicio;
     int contador = 0;
 
     while (atual) {
@@ -109,8 +109,8 @@ int elemento_da_lista_encadeada(no_t **inicio, int indice) {
     return -1;
 }
 
-int tamanho_da_lista_encadeada(no_t **inicio) {
-    no_t *atual = *inicio;
+int tamanho_da_lista_encadeada(lista_encadeada_t **inicio) {
+    lista_encadeada_t *atual = *inicio;
     int contador = 0;
 
     while (atual) {
@@ -120,7 +120,7 @@ int tamanho_da_lista_encadeada(no_t **inicio) {
     return contador;
 }
 
-int limitar_posicao_encadeada(no_t **inicio, int indice) {
+int limitar_posicao_encadeada(lista_encadeada_t **inicio, int indice) {
     int tamanho = tamanho_da_lista_encadeada(inicio);
 
     if (indice < 0)
@@ -132,30 +132,30 @@ int limitar_posicao_encadeada(no_t **inicio, int indice) {
     return indice;
 }
 
-void inserir_na_posicao_da_lista_encadeada(no_t **inicio, int valor, int indice) {
+void inserir_na_posicao_da_lista_encadeada(lista_encadeada_t **inicio, int valor, int indice) {
     int posicao = limitar_posicao_encadeada(inicio, indice);
 
     if (posicao==0) {
         adicionar_lista_encadeada(inicio,valor);
         return;
     }
-    no_t *atual = *inicio;
+    lista_encadeada_t *atual = *inicio;
 
     for (int i = 0; i < posicao-1; i++)
         atual = atual->proximo;
 
-    no_t *novo_no = criar_lista_encadeada(valor);
+    lista_encadeada_t *novo_no = criar_lista_encadeada(valor);
     novo_no->proximo = atual->proximo;
     atual->proximo = novo_no;
 }
 
-int remover_na_posicao_da_lista_encadeada(no_t **inicio, int indice) {
+int remover_na_posicao_da_lista_encadeada(lista_encadeada_t **inicio, int indice) {
     int posicao = limitar_posicao_encadeada(inicio, indice);
 
     if (*inicio == NULL)
         return -1;
 
-    no_t *atual = *inicio;
+    lista_encadeada_t *atual = *inicio;
 
     for (int i = 0; i < posicao; i++)
         atual = atual->proximo;
