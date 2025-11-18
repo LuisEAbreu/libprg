@@ -1,13 +1,13 @@
 #include <stdlib.h>
 
-typedef struct no_duplo {
-    struct no_duplo* anterior;
+typedef struct lista_encadeada_dupla {
+    struct lista_encadeada_dupla* anterior;
     int valor;
-    struct no_duplo* proximo;
-}no_duplo_t;
+    struct lista_encadeada_dupla* proximo;
+}lista_encadeada_dupla_t;
 
-no_duplo_t *criar_lista_encadeada_dupla(int valor) {
-    no_duplo_t *no_duplo = malloc(sizeof(no_duplo_t));
+lista_encadeada_dupla_t *criar_lista_encadeada_dupla(int valor) {
+    lista_encadeada_dupla_t *no_duplo = malloc(sizeof(lista_encadeada_dupla_t));
     no_duplo->valor = valor;
     no_duplo->proximo = NULL;
     no_duplo->anterior = NULL;
@@ -15,16 +15,16 @@ no_duplo_t *criar_lista_encadeada_dupla(int valor) {
     return no_duplo;
 }
 
-void adicionar_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
-    no_duplo_t *novo_no = criar_lista_encadeada_dupla(valor);
+void adicionar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor) {
+    lista_encadeada_dupla_t *novo_no = criar_lista_encadeada_dupla(valor);
     novo_no->proximo = *inicio;
     (*inicio)->anterior = novo_no;
     *inicio = novo_no;
 
 }
 
-no_duplo_t *buscar_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
-    no_duplo_t *atual = *inicio;
+lista_encadeada_dupla_t *buscar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor) {
+    lista_encadeada_dupla_t *atual = *inicio;
 
     while (atual) {     // dentro dos parênteses é o equivalente a (atual != NULL)
         if (atual->valor == valor)
@@ -36,8 +36,8 @@ no_duplo_t *buscar_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
     return NULL;
 }
 
-void remover_lista_encadeada_dupla(no_duplo_t **inicio, int valor) {
-    no_duplo_t *atual = *inicio;
+void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor) {
+    lista_encadeada_dupla_t *atual = *inicio;
 
     while (atual) {
         if (atual->valor == valor) {
