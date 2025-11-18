@@ -66,4 +66,12 @@ void adicionar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor
 lista_encadeada_dupla_t *buscar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 
+/*--ÁRVORE DE BUSCA BINÁRIA--*/
+typedef struct no no_t;
+
+no_t *criar_no(int valor);
+void destruir_no(no_t *no);
+no_t *inserir_valor(no_t *raiz, int valor);
+bool buscar_no(no_t *raiz, int valor);
+
 #endif
