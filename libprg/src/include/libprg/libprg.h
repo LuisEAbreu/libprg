@@ -73,5 +73,6 @@ no_t *criar_no(int valor);
 void destruir_no(no_t *no);
 no_t *inserir_valor(no_t *raiz, int valor);
 bool buscar_no(no_t *raiz, int valor);
+no_t *remover_valor(no_t *raiz, int valor);
 
 #endif

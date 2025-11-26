@@ -47,3 +47,34 @@ bool busca(no_t *raiz, int valor){
 
     return busca(raiz->direita, valor);
 }
+
+no_t *remover_valor(no_t *raiz, int valor){
+    if (raiz == NULL)
+        return raiz;
+
+    if (valor < raiz->valor)
+        raiz->esquerda = remover_valor(raiz->esquerda, valor);
+
+    else if (valor > raiz->valor)
+        raiz->direita = remover_valor(raiz->direita, valor);
+
+    else {
+        if (raiz->esquerda == NULL) {
+            no_t *aux = raiz->direita;
+            free(raiz);
+            return aux;
+        }
+        if (raiz->direita == NULL) {
+            no_t *aux = raiz->esquerda;
+            free(raiz);
+            return aux;
+        }
+        no_t *aux = raiz->direita;
+        while (aux->esquerda != NULL)
+            aux = aux->esquerda;
+
+        raiz->valor = aux->valor;
+        raiz->direita = remover_valor(raiz->direita, aux->valor);
+    }
+    return raiz;
+}
