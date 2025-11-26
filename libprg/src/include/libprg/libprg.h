@@ -66,6 +66,11 @@ void adicionar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor
 lista_encadeada_dupla_t *buscar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 
+/*--ALGORITMOS DE ORDENAÇÃO (TROCA E SELEÇÃO)--*/
+
+void bubble_sort(int vetor[], int n);
+
+
 /*--ÁRVORE DE BUSCA BINÁRIA--*/
 typedef struct no no_t;
 
