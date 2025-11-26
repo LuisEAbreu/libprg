@@ -19,6 +19,7 @@ add_library(libprg
         src/libprg/lista_encadeada.c
         src/libprg/lista_encadeada_dupla.c
         src/libprg/alg_ord_troca.c
+        src/libprg/alg_ord_div.c
         src/libprg/arvore_binaria.c
 )
 target_sources(libprg PUBLIC ${SOURCES})

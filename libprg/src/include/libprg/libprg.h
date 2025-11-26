@@ -72,6 +72,8 @@ void bubble_sort(int vetor[], int n);
 void insertion_sort(int vetor[], int n);
 void selection_sort(int vetor[], int n);
 
+/*--ALGORITMOS DE ORDENAÇÃO (DIVISÃO E CONQUISTA)--*/
+
 
 /*--ÁRVORE DE BUSCA BINÁRIA--*/
 typedef struct no no_t;
