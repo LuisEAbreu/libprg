@@ -24,3 +24,19 @@ void insertion_sort(int vetor[], int n) {
 		vetor[j+1] = chave;
 	}
 }
+
+void selection_sort(int vetor[], int n) {
+	for (int i=0; i < n-1; i++) {
+		int minimo = i;
+
+		for (int j=i+1; j < n; j++) {
+			if (vetor[j] < vetor[minimo])
+				minimo = j;
+		}
+		if (i!=minimo) {
+			int aux = vetor[i];
+			vetor[i] = vetor[minimo];
+			vetor[minimo] = aux;
+		}
+	}
+}

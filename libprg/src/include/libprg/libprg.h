@@ -70,6 +70,7 @@ void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 
 void bubble_sort(int vetor[], int n);
 void insertion_sort(int vetor[], int n);
+void selection_sort(int vetor[], int n);
 
 
 /*--ÁRVORE DE BUSCA BINÁRIA--*/
