@@ -69,6 +69,7 @@ void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 /*--ALGORITMOS DE ORDENAÇÃO (TROCA E SELEÇÃO)--*/
 
 void bubble_sort(int vetor[], int n);
+void insertion_sort(int vetor[], int n);
 
 
 /*--ÁRVORE DE BUSCA BINÁRIA--*/
