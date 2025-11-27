@@ -8,6 +8,13 @@ typedef struct no {
     struct no *direita;
 } no_t;
 
+typedef struct no_avl {
+    int valor;
+    int altura; // altura da subárvore
+    struct no *esquerda;
+    struct no *direita;
+} no_avl_t;
+
 no_t *criar_no(int valor){
     no_t *no = (no_t *) malloc(sizeof(no_t));
     no->valor = valor;
