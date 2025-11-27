@@ -91,3 +91,10 @@ int altura_avl(no_avl_t *v) {
         return 0;
     return v->altura; // retorna a altura da subárvore
 }
+
+int fator_balanceamento_avl(no_avl_t *v) {
+    if (v == NULL)
+        return 0;
+
+    return altura_avl(v->esquerda) - altura_avl(v->direita); // negativo se a subárvore direita for maior
+}
