@@ -85,3 +85,9 @@ no_t *remover_valor(no_t *raiz, int valor){
     }
     return raiz;
 }
+
+int altura_avl(no_avl_t *v) {
+    if (v == NULL)
+        return 0;
+    return v->altura; // retorna a altura da subárvore
+}
