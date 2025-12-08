@@ -67,3 +67,15 @@ int tamanho_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio) {
 
     return contador;
 }
+
+int limitar_posicao_dupla(lista_encadeada_dupla_t **inicio, int posicao) {
+    int tamanho = tamanho_lista_encadeada_dupla(inicio);
+
+    if (posicao < 0)
+        return 0;
+
+    if (posicao > tamanho)
+        return tamanho;
+
+    return posicao;
+}
