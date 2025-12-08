@@ -107,3 +107,34 @@ void adicionar_na_posicao_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio
 
     atual->proximo = novo_no;
 }
+
+void remover_na_posicao_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int posicao) {
+    int tamanho = tamanho_lista_encadeada_dupla(inicio);
+
+    posicao = limitar_posicao_dupla(inicio, posicao);
+
+    if (posicao == tamanho)
+        return;
+
+    lista_encadeada_dupla_t *atual = *inicio;
+
+    if (posicao == 0) {
+        *inicio = atual->proximo;
+        if (*inicio)
+            (*inicio)->anterior = NULL;
+
+        free(atual);
+        return;
+    }
+
+    for (int i = 0; i < posicao; i++)
+        atual = atual->proximo;
+
+    if (atual->anterior)
+        atual->anterior->proximo = atual->proximo;
+
+    if (atual->proximo)
+        atual->proximo->anterior = atual->anterior;
+
+    free(atual);
+}
