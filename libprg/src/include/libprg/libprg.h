@@ -67,6 +67,7 @@ lista_encadeada_dupla_t *criar_lista_encadeada_dupla(int valor);
 void adicionar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 lista_encadeada_dupla_t *buscar_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
+int tamanho_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio);
 
 /*--ALGORITMOS DE ORDENAÇÃO (TROCA E SELEÇÃO)--*/
 

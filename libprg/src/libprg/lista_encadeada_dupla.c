@@ -55,3 +55,15 @@ void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor) 
         atual = atual->proximo;
     }
 }
+
+int tamanho_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio) {
+    int contador = 0;
+    lista_encadeada_dupla_t *atual = *inicio;
+
+    while (atual) {
+        contador++;
+        atual = atual->proximo;
+    }
+
+    return contador;
+}
