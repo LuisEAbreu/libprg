@@ -82,6 +82,7 @@ void selection_sort(int vetor[], int n);
 
 /*--ALGORITMOS DE ORDENAÇÃO (DIVISÃO E CONQUISTA)--*/
 
+void merge_sort(int vetor[], int esquerda, int direita);
 
 /*--ÁRVORE DE BUSCA BINÁRIA--*/
 typedef struct no no_t;
