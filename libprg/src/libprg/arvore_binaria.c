@@ -11,8 +11,8 @@ typedef struct no {
 typedef struct no_avl {
     int valor;
     int altura; // altura da subárvore
-    struct no *esquerda;
-    struct no *direita;
+    struct no_avl *esquerda;
+    struct no_avl *direita;
 } no_avl_t;
 
 no_t *criar_no(int valor){
