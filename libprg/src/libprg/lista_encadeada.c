@@ -195,3 +195,33 @@ int limitar_posicao_circular(lista_encadeada_t **inicio, int indice) {
 
     return indice;
 }
+
+void inserir_na_posicao_lista_encadeada_circular(lista_encadeada_t **inicio, int valor, int indice) {
+    int posicao = limitar_posicao_circular(inicio, indice);
+
+    if (*inicio == NULL) {
+        *inicio = criar_lista_encadeada_circular(valor);
+        return;
+    }
+
+    lista_encadeada_t *aux = criar_lista_encadeada(valor);
+
+    if (posicao == 0) {
+        lista_encadeada_t *ultimo = *inicio;
+
+        while (ultimo->proximo != *inicio)
+            ultimo = ultimo->proximo;
+
+        aux->proximo = *inicio;
+        *inicio = aux;
+        ultimo->proximo = aux;
+        return;
+    }
+    lista_encadeada_t *atual = *inicio;
+
+    for (int i = 0; i < posicao - 1; i++)
+        atual = atual->proximo;
+
+    aux->proximo = atual->proximo;
+    atual->proximo = aux;
+}
