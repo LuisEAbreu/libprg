@@ -168,3 +168,18 @@ int remover_na_posicao_da_lista_encadeada(lista_encadeada_t **inicio, int indice
 
     return -1;
 }
+
+int tamanho_da_lista_circular(lista_encadeada_t **inicio) {
+    if (*inicio == NULL)
+        return 0;
+
+    int contador = 1;
+    lista_encadeada_t *atual = (*inicio)->proximo;
+
+    while (atual != *inicio) {
+        contador++;
+        atual = atual->proximo;
+    }
+
+    return contador;
+}
