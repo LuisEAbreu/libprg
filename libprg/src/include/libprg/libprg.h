@@ -61,6 +61,7 @@ void adicionar_lista_encadeada_circular(lista_encadeada_t **inicio, int valor);
 void destruir_lista_encadeada_circular(lista_encadeada_t **inicio);
 int tamanho_da_lista_circular(lista_encadeada_t **inicio);
 void inserir_na_posicao_lista_encadeada_circular(lista_encadeada_t **inicio, int valor, int indice);
+int remover_na_posicao_lista_encadeada_circular(lista_encadeada_t **inicio, int indice);
 
 /*--LISTA ENCADEADA DUPLA--*/
 typedef struct lista_encadeada_dupla lista_encadeada_dupla_t;

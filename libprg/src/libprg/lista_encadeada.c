@@ -225,3 +225,50 @@ void inserir_na_posicao_lista_encadeada_circular(lista_encadeada_t **inicio, int
     aux->proximo = atual->proximo;
     atual->proximo = aux;
 }
+
+int remover_na_posicao_lista_encadeada_circular(lista_encadeada_t **inicio, int indice) {
+    if (*inicio == NULL)
+        return -1;
+
+    int tamanho = tamanho_da_lista_circular(inicio);
+    int posicao = limitar_posicao_circular(inicio, indice);
+
+    if (posicao >= tamanho)
+        return -1;
+
+    lista_encadeada_t *atual = *inicio;
+
+    if (posicao == 0) {
+        int valor = atual->valor;
+
+        if (atual->proximo == atual) {
+            free(atual);
+            *inicio = NULL;
+            return valor;
+        }
+        lista_encadeada_t *ultimo = *inicio;
+
+        while (ultimo->proximo != *inicio)
+            ultimo = ultimo->proximo;
+
+        *inicio = atual->proximo;
+        ultimo->proximo = *inicio;
+        free(atual);
+
+        return valor;
+    }
+    lista_encadeada_t *anterior = *inicio;
+    atual = anterior->proximo;
+
+    for (int i = 1; i < posicao; i++) {
+        anterior = atual;
+        atual = atual->proximo;
+    }
+
+    int valor = atual->valor;
+
+    anterior->proximo = atual->proximo;
+    free(atual);
+
+    return valor;
+}
