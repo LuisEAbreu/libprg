@@ -102,5 +102,6 @@ int fator_balanceamento_avl(no_avl_t *v);
 no_avl_t *rotacao_esquerda(no_avl_t* v);
 no_avl_t *rotacao_direita(no_avl_t* v);
 no_avl_t *rotacao_dupla_esquerda(no_avl_t *v);
+no_avl_t *rotacao_dupla_direita(no_avl_t *v);
 
 #endif
