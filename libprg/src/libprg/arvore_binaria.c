@@ -122,3 +122,9 @@ no_avl_t *rotacao_direita(no_avl_t* v) {
 
     return u;
 }
+
+no_avl_t *rotacao_dupla_esquerda(no_avl_t *v) {
+    v->direita = rotacao_direita(v->direita);
+
+    return rotacao_esquerda(v);
+}
