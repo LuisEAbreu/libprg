@@ -181,3 +181,39 @@ no_avl_t *inserir_avl(no_avl_t *v, int valor) {
 
     return v;
 }
+
+no_avl_t *remover_avl(no_avl_t *v, int valor) {
+    if (v == NULL)
+        return NULL;
+
+    if (valor < v->valor)
+        v->esquerda = remover_avl(v->esquerda, valor);
+
+    else if (valor > v->valor)
+        v->direita = remover_avl(v->direita, valor);
+
+    else {
+        if (v->esquerda == NULL || v->direita == NULL) {
+            no_avl_t *aux;
+
+            if (v->esquerda != NULL)
+                aux = v->esquerda;
+            else
+                aux = v->direita;
+
+            free(v);
+            return aux;
+        }
+        no_avl_t *aux = v->esquerda;
+
+        while (aux->direita != NULL)
+            aux = aux->direita;
+
+        v->valor = aux->valor;
+        v->esquerda = remover_avl(v->esquerda, aux->valor);
+    }
+    v->altura = 1 + max(altura_avl(v->esquerda), altura_avl(v->direita));
+    v = balancear_avl(v);
+
+    return v;
+}

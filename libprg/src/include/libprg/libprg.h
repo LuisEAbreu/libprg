@@ -106,5 +106,6 @@ no_avl_t *rotacao_dupla_esquerda(no_avl_t *v);
 no_avl_t *rotacao_dupla_direita(no_avl_t *v);
 no_avl_t *balancear_avl(no_avl_t *v);
 no_avl_t *inserir_avl(no_avl_t *v, int valor);
+no_avl_t *remover_avl(no_avl_t *v, int valor);
 
 #endif
