@@ -99,5 +99,6 @@ typedef struct no_avl no_avl_t;
 int altura_avl(no_avl_t *v);
 int fator_balanceamento_avl(no_avl_t *v);
 no_avl_t *rotacao_esquerda(no_avl_t* v);
+no_avl_t *rotacao_direita(no_avl_t* v);
 
 #endif

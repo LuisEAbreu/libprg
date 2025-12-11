@@ -110,3 +110,15 @@ no_avl_t *rotacao_esquerda(no_avl_t* v) {
 
     return u;
 }
+
+no_avl_t *rotacao_direita(no_avl_t* v) {
+    no_avl_t* u = v->esquerda;
+
+    v->esquerda = u->direita;
+    u->direita = v;
+
+    v->altura = 1 + max(altura_avl(v->esquerda), altura_avl(v->direita));
+    u->altura = 1 + max(altura_avl(u->esquerda), altura_avl(u->direita));
+
+    return u;
+}
