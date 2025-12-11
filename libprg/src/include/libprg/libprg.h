@@ -72,7 +72,7 @@ lista_encadeada_dupla_t *buscar_lista_encadeada_dupla(lista_encadeada_dupla_t **
 void remover_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
 int tamanho_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio);
 void adicionar_na_posicao_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int valor);
-void remover_na_posicao_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int posicao)
+void remover_na_posicao_lista_encadeada_dupla(lista_encadeada_dupla_t **inicio, int posicao);
 
 /*--ALGORITMOS DE ORDENAÇÃO (TROCA E SELEÇÃO)--*/
 
