@@ -22,6 +22,14 @@ no_t *criar_no(int valor){
     return no;
 }
 
+no_avl_t *criar_avl(int valor){
+    no_avl_t *no = (no_avl_t *) malloc(sizeof(no_avl_t));
+    no->valor = valor;
+    no->altura = 1;
+    no->esquerda = no->direita = NULL;
+    return no;
+}
+
 void destruir_no(no_t *no) {
     if (no != NULL) {
         destruir_no(no->esquerda);

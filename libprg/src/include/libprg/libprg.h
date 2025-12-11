@@ -97,6 +97,7 @@ no_t *remover_valor(no_t *raiz, int valor);
 /*--ÁRVORE DE BUSCA BINÁRIA BALANCEADA--*/
 typedef struct no_avl no_avl_t;
 
+no_avl_t *criar_avl(int valor);
 int altura_avl(no_avl_t *v);
 int fator_balanceamento_avl(no_avl_t *v);
 no_avl_t *rotacao_esquerda(no_avl_t* v);
