@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
+#define max(a,b) ((a) > (b) ? (a) : (b))
+
 typedef struct no {
     int valor;
     struct no *esquerda;
@@ -161,5 +163,21 @@ no_avl_t *balancear_avl(no_avl_t *v) {
 
         return rotacao_dupla_esquerda(v);
     }
+    return v;
+}
+
+no_avl_t *inserir_avl(no_avl_t *v, int valor) {
+    if (v == NULL)
+        return criar_avl(valor);
+
+    if (valor < v->valor)
+        v->esquerda = inserir_avl(v->esquerda, valor);
+
+    else if (valor > v->valor)
+        v->direita = inserir_avl(v->direita, valor);
+
+    v->altura = 1 + max(altura_avl(v->esquerda), altura_avl(v->direita));
+    v = balancear_avl(v);
+
     return v;
 }
