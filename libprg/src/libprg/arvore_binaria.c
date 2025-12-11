@@ -134,3 +134,24 @@ no_avl_t *rotacao_dupla_direita(no_avl_t *v) {
 
     return rotacao_direita(v);
 }
+
+no_avl_t *balancear_avl(no_avl_t *v) {
+    if (v == NULL)
+        return NULL;
+
+    int fator_balanceamento = fator_balanceamento_avl(v);
+
+    if (fator_balanceamento > 1) {
+        if (fator_balanceamento_avl(v->esquerda) > 0)
+            return rotacao_direita(v);
+
+        return rotacao_dupla_direita(v);
+    }
+    if (fator_balanceamento < -1) {
+        if (fator_balanceamento_avl(v->direita) < 0)
+            return rotacao_esquerda(v);
+
+        return rotacao_dupla_esquerda(v);
+    }
+    return v;
+}
