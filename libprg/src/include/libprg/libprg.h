@@ -98,5 +98,6 @@ no_t *remover_valor(no_t *raiz, int valor);
 typedef struct no_avl no_avl_t;
 int altura_avl(no_avl_t *v);
 int fator_balanceamento_avl(no_avl_t *v);
+no_avl_t *rotacao_esquerda(no_avl_t* v);
 
 #endif

@@ -98,3 +98,15 @@ int fator_balanceamento_avl(no_avl_t *v) {
 
     return altura_avl(v->esquerda) - altura_avl(v->direita); // negativo se a subárvore direita for maior
 }
+
+no_avl_t *rotacao_esquerda(no_avl_t* v) {
+    no_avl_t* u = v->direita;
+
+    v->direita = u->esquerda;
+    u->esquerda = v;
+
+    v->altura = 1 + max(altura_avl(v->esquerda), altura_avl(v->direita));
+    u->altura = 1 + max(altura_avl(u->esquerda), altura_avl(u->direita));
+
+    return u;
+}
