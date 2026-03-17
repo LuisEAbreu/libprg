@@ -4,5 +4,6 @@
 /*===== PILHA =====*/
 typedef struct pilha pilha_t;
 
+pilha_t *criar_pilha(int capacidade);
 
 #endif
