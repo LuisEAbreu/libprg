@@ -40,5 +40,8 @@ int topo_pilha(pilha_t *pilha) {
     return pilha->topo;
 }
 
-// tamanho
+int tamanho_pilha(pilha_t *pilha) {
+    return pilha->topo+1;
+}
+
 // vazia
