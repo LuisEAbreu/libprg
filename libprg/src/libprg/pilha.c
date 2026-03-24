@@ -35,6 +35,10 @@ int empilhar(pilha_t *pilha, int valor) {
 
     return 0;
 }
-// desempilhar
+
+int topo_pilha(pilha_t *pilha) {
+    return pilha->topo;
+}
+
 // tamanho
 // vazia
