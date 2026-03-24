@@ -16,6 +16,12 @@ pilha_t *criar_pilha(int capacidade) {
     return pilha;
 }
 
+int pilha_cheia(pilha_t *pilha) {
+    if (pilha->capacidade >= pilha->topo)
+        return 1;
+    return 0;
+}
+
 // empilhar
 // desempilhar
 // tamanho
