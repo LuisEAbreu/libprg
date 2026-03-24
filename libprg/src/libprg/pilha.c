@@ -49,3 +49,13 @@ int pilha_vazia(pilha_t *pilha) {
         return 1;
     return 0;
 }
+
+int desempilhar(pilha_t *pilha) {
+    if (pilha_cheia(pilha) == 1)
+        return -1;
+
+    int valor = pilha->elementos[pilha->topo];
+    pilha->topo--;
+
+    return valor;
+}

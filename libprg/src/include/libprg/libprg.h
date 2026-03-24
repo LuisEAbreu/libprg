@@ -10,5 +10,6 @@ int empilhar(pilha_t *pilha, int valor);
 int topo_pilha(pilha_t *pilha);
 int tamanho_pilha(pilha_t *pilha);
 int pilha_vazia(pilha_t *pilha);
+int desempilhar(pilha_t *pilha);
 
 #endif
