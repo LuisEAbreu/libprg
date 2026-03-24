@@ -44,4 +44,8 @@ int tamanho_pilha(pilha_t *pilha) {
     return pilha->topo+1;
 }
 
-// vazia
+int pilha_vazia(pilha_t *pilha) {
+    if (pilha->topo < 0)
+        return 1;
+    return 0;
+}
