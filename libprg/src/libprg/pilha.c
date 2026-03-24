@@ -59,3 +59,10 @@ int desempilhar(pilha_t *pilha) {
 
     return valor;
 }
+
+int destruir_pilha(pilha_t *pilha) {
+    free(pilha->elementos);
+    free(pilha);
+
+    return 0;
+}
