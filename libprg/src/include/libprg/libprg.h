@@ -6,5 +6,6 @@ typedef struct pilha pilha_t;
 
 pilha_t *criar_pilha(int capacidade);
 int pilha_cheia(pilha_t *pilha);
+int empilhar(pilha_t *pilha, int valor);
 
 #endif

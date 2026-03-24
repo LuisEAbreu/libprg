@@ -22,7 +22,19 @@ int pilha_cheia(pilha_t *pilha) {
     return 0;
 }
 
-// empilhar
+int empilhar(pilha_t *pilha, int valor) {
+    if (pilha_cheia(pilha) == 1) {
+        pilha->capacidade *= 2;
+        pilha->elementos = realloc(pilha->elementos,pilha->capacidade * sizeof(int));
+
+        if (pilha->elementos == NULL)
+            return -1;
+    }
+    pilha->topo++;
+    pilha->elementos[pilha->topo] = valor;
+
+    return 0;
+}
 // desempilhar
 // tamanho
 // vazia
