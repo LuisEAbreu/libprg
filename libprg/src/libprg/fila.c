@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "libprg/libprg.h"
 
 typedef struct fila {
@@ -9,7 +10,16 @@ typedef struct fila {
 } fila_t;
 
 
-// criar_fila
+fila_t *criar_fila(int capacidade) {
+    fila_t *fila = malloc(sizeof(fila_t));
+    fila->elementos = malloc(sizeof(int) * capacidade);
+    fila->capacidade = capacidade;
+    fila->tamanho = 0;
+    fila->inicio = 0;
+    fila->fim = 0;
+
+    return fila;
+}
 // enfileirar
 // desenfileirar
 // inicio_fila
