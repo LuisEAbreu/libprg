@@ -51,7 +51,7 @@ int pilha_vazia(pilha_t *pilha) {
 }
 
 int desempilhar(pilha_t *pilha) {
-    if (pilha_cheia(pilha) == 1)
+    if (pilha_vazia(pilha) == 1)
         return -1;
 
     int valor = pilha->elementos[pilha->topo];
