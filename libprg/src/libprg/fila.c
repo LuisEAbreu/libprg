@@ -26,4 +26,10 @@ fila_t *criar_fila(int capacidade) {
 // fim_fila
 // fila_vazia
 // fila_cheia
-// destruir_fila
+
+int destruir_fila(fila_t *fila) {
+    free(fila->elementos);
+    free(fila);
+
+    return 0;
+}
