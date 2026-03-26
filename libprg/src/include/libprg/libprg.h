@@ -14,4 +14,6 @@ int desempilhar(pilha_t *pilha);
 int destruir_pilha(pilha_t *pilha);
 int valor_indice_pilha(pilha_t *pilha, int indice);
 
+/*===== FILA =====*/
+
 #endif
