@@ -20,12 +20,18 @@ fila_t *criar_fila(int capacidade) {
 
     return fila;
 }
+
+int fila_cheia(fila_t *fila) {
+    if (fila->tamanho >= fila->capacidade)
+        return 1;
+    return 0;
+}
+
 // enfileirar
 // desenfileirar
 // inicio_fila
 // fim_fila
 // fila_vazia
-// fila_cheia
 
 int destruir_fila(fila_t *fila) {
     free(fila->elementos);
