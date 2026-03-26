@@ -15,5 +15,6 @@ int destruir_pilha(pilha_t *pilha);
 int valor_indice_pilha(pilha_t *pilha, int indice);
 
 /*===== FILA =====*/
+typedef struct fila fila_t;
 
 #endif
