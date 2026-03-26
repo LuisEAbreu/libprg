@@ -66,3 +66,9 @@ int destruir_pilha(pilha_t *pilha) {
 
     return 0;
 }
+
+int valor_indice_pilha(pilha_t *pilha, int indice) {
+    if (indice > pilha->topo)
+        return -1;
+    return pilha->elementos[indice];
+}
