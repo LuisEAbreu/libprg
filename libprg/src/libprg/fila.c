@@ -27,7 +27,17 @@ int fila_cheia(fila_t *fila) {
     return 0;
 }
 
-// enfileirar
+int enfileirar(fila_t *fila, int valor) {
+    if (fila_cheia(fila) == 1)
+        return -1;
+
+    fila->elementos[fila->fim] = valor;
+    fila->fim = (fila->fim + 1) % fila->capacidade;
+    fila->tamanho++;
+
+    return 0;
+}
+
 // desenfileirar
 // inicio_fila
 // fim_fila
