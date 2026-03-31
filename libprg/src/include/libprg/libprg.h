@@ -22,5 +22,6 @@ int fila_cheia(fila_t *fila);
 int enfileirar(fila_t *fila, int valor);
 int fila_vazia(fila_t *fila);
 int desenfileirar(fila_t *fila);
+int inicio_fila(fila_t *fila);
 
 #endif
