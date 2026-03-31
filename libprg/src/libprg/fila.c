@@ -63,6 +63,10 @@ int fim_fila(fila_t *fila) {
     return fila->elementos[fila->fim];
 }
 
+int tamanho_fila(fila_t *fila) {
+    return fila->tamanho;
+}
+
 int destruir_fila(fila_t *fila) {
     free(fila->elementos);
     free(fila);
