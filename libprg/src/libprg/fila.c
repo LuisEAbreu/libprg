@@ -48,8 +48,8 @@ int desenfileirar(fila_t *fila) {
     if (fila_vazia(fila) == 1)
         return -1;
 
-    int valor = fila->elementos[fila->fim];
-    fila->fim = (fila->fim - 1) % fila->capacidade;
+    int valor = fila->elementos[fila->inicio];
+    fila->inicio = (fila->inicio + 1) % fila->capacidade;
     fila->tamanho--;
 
     return valor;
