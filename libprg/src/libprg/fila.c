@@ -67,6 +67,12 @@ int tamanho_fila(fila_t *fila) {
     return fila->tamanho;
 }
 
+int valor_indice_fila(fila_t *fila, int indice) {
+    if (indice > fila->tamanho)
+        return -1;
+    return fila->elementos[indice];
+}
+
 int destruir_fila(fila_t *fila) {
     free(fila->elementos);
     free(fila);
