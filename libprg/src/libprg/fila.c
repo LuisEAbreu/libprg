@@ -68,7 +68,7 @@ int tamanho_fila(fila_t *fila) {
 }
 
 int valor_indice_fila(fila_t *fila, int indice) {
-    if (indice > fila->tamanho)
+    if (indice > fila->capacidade)
         return -1;
     return fila->elementos[indice];
 }
