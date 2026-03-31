@@ -38,8 +38,6 @@ int enfileirar(fila_t *fila, int valor) {
     return 0;
 }
 
-// fim_fila
-
 int fila_vazia(fila_t *fila) {
     if (fila->tamanho <= 0)
         return 1;
@@ -59,6 +57,10 @@ int desenfileirar(fila_t *fila) {
 
 int inicio_fila(fila_t *fila) {
     return fila->elementos[fila->inicio];
+}
+
+int fim_fila(fila_t *fila) {
+    return fila->elementos[fila->fim];
 }
 
 int destruir_fila(fila_t *fila) {
