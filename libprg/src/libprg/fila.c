@@ -60,7 +60,13 @@ int inicio_fila(fila_t *fila) {
 }
 
 int fim_fila(fila_t *fila) {
-    return fila->elementos[fila->fim];
+    if (fila_vazia(fila) == 1)
+        return -1;
+
+    if (fila->fim == 0)
+        return fila->elementos[fila->capacidade-1];
+
+    return fila->elementos[fila->fim-1];
 }
 
 int tamanho_fila(fila_t *fila) {
