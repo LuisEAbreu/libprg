@@ -16,6 +16,7 @@ int valor_indice_pilha(pilha_t *pilha, int indice);
 
 /*===== FILA =====*/
 typedef struct fila fila_t;
+
 fila_t *criar_fila(int capacidade);
 int destruir_fila(fila_t *fila);
 int fila_cheia(fila_t *fila);
