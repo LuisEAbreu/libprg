@@ -29,5 +29,6 @@ int tamanho_fila(fila_t *fila);
 int valor_indice_fila(fila_t *fila, int indice);
 
 /*===== LISTA =====*/
+typedef struct lista lista_linear_t;
 
 #endif

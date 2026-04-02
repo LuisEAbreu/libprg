@@ -1,5 +1,12 @@
 #include "libprg/libprg.h"
 
+typedef struct lista {
+    int *elementos;
+    int capacidade;
+    int tamanho;
+    int ordenada;
+} lista_linear_t;
+
 // criar_lista_linear
 // inserir_lista_linear
 // remover_lista_linear
