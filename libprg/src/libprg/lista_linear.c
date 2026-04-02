@@ -26,7 +26,26 @@ int lista_linear_cheia(lista_linear_t *lista) {
     return 0;
 }
 
-// inserir_lista_linear
+int inserir_nao_ordenada(lista_linear_t *lista, int elemento) {
+    return 0;
+}
+
+int inserir_ordenada(lista_linear_t *lista, int elemento) {
+    return 0;
+}
+
+int inserir_lista_linear(lista_linear_t *lista, int elemento, int ordenada) {
+    if (lista_linear_cheia(lista) == 1)
+        return -1;
+
+    if (ordenada == 0)
+        inserir_nao_ordenada(lista, elemento);
+    else
+        inserir_ordenada(lista, elemento);
+
+    return 0;
+}
+
 // remover_lista_linear
 // buscar_lista_linear
 // alterar_lista_linear
