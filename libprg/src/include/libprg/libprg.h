@@ -31,4 +31,6 @@ int valor_indice_fila(fila_t *fila, int indice);
 /*===== LISTA =====*/
 typedef struct lista lista_linear_t;
 
+lista_linear_t *criar_lista_linear(int capacidade, int ordenada);
+
 #endif
