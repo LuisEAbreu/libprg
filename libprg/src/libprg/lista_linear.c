@@ -19,6 +19,13 @@ lista_linear_t *criar_lista_linear(int capacidade, int ordenada) {
     return lista;
 }
 
+int lista_linear_cheia(lista_linear_t *lista) {
+    if (lista->tamanho >= lista->capacidade) {
+        return 1;
+    }
+    return 0;
+}
+
 // inserir_lista_linear
 // remover_lista_linear
 // buscar_lista_linear
