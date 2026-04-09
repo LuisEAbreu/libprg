@@ -17,7 +17,7 @@ pilha_t *criar_pilha(int capacidade) {
 }
 
 int pilha_cheia(pilha_t *pilha) {
-    if (pilha->capacidade >= pilha->topo)
+    if (pilha->topo >= pilha->capacidade - 1)
         return 1;
     return 0;
 }
