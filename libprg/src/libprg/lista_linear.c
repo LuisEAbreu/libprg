@@ -26,6 +26,13 @@ int lista_linear_cheia(lista_linear_t *lista) {
     return 0;
 }
 
+int lista_linear_vazia(lista_linear_t *lista) {
+    if (lista->tamanho <= 0) {
+        return 1;
+    }
+    return 0;
+}
+
 int inserir_nao_ordenada(lista_linear_t *lista, int elemento) {
     return 0;
 }
