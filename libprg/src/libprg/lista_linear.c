@@ -33,6 +33,42 @@ int lista_linear_vazia(lista_linear_t *lista) {
     return 0;
 }
 
+int busca_linear(lista_linear_t *lista, int elemento) {
+    for (int i=0; i<lista->tamanho; i++) {
+        if (lista->elementos[i] == elemento)
+            return i;
+    }
+    return -1;
+}
+
+int busca_binaria(lista_linear_t *lista, int elemento) {
+    int inicio = 0;
+    int final = lista->tamanho - 1;
+
+    while (inicio <= final) {
+        int meio = inicio + (final - inicio) / 2;
+
+        if (elemento == lista->elementos[meio])
+            return meio;
+
+        if (elemento > lista->elementos[meio])
+            inicio = meio + 1;
+
+        final = meio - 1;
+    }
+    return -1;
+}
+
+int buscar_lista_linear(lista_linear_t *lista, int elemento) {
+    if (lista_linear_vazia(lista) == 1)
+        return -2;
+
+    if (lista->ordenada == 1)
+        return busca_binaria(lista, elemento);
+
+    return busca_linear(lista, elemento);
+}
+
 int inserir_nao_ordenada(lista_linear_t *lista, int elemento) {
     return 0;
 }
@@ -54,7 +90,6 @@ int inserir_lista_linear(lista_linear_t *lista, int elemento, int ordenada) {
 }
 
 // remover_lista_linear
-// buscar_lista_linear
 // alterar_lista_linear
 // ordenar_lista_linear
 // combinar_lista_linear
