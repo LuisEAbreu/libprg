@@ -71,23 +71,38 @@ int buscar_lista_linear(lista_linear_t *lista, int elemento) {
 }
 
 int inserir_nao_ordenada(lista_linear_t *lista, int elemento) {
+    lista->elementos[lista->tamanho] = elemento;
+    lista->tamanho++;
+
     return 0;
 }
 
 int inserir_ordenada(lista_linear_t *lista, int elemento) {
+    int indice = lista->tamanho;
+
+    for (int i=0; i<lista->tamanho; i++) {
+        if (lista->elementos[i] > elemento) {
+            indice = i;
+            break;
+        }
+    }
+    for (int i=lista->tamanho; i>indice; i--) {
+        lista->elementos[i] = lista->elementos[i-1];
+    }
+    lista->elementos[indice] = elemento;
+    lista->tamanho++;
+
     return 0;
 }
 
-int inserir_lista_linear(lista_linear_t *lista, int elemento, int ordenada) {
+int inserir_lista_linear(lista_linear_t *lista, int elemento) {
     if (lista_linear_cheia(lista) == 1)
         return -1;
 
-    if (ordenada == 0)
-        inserir_nao_ordenada(lista, elemento);
-    else
-        inserir_ordenada(lista, elemento);
+    if (lista->ordenada == 0)
+        return inserir_nao_ordenada(lista, elemento);
 
-    return 0;
+    return inserir_ordenada(lista, elemento);
 }
 
 // remover_lista_linear
