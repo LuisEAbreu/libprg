@@ -54,7 +54,8 @@ int busca_binaria(lista_linear_t *lista, int elemento) {
         if (elemento > lista->elementos[meio])
             inicio = meio + 1;
 
-        final = meio - 1;
+        else
+            final = meio - 1;
     }
     return -1;
 }
