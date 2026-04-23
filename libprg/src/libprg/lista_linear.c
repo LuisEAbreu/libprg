@@ -61,9 +61,6 @@ int busca_binaria(lista_linear_t *lista, int elemento) {
 }
 
 int buscar_lista_linear(lista_linear_t *lista, int elemento) {
-    if (lista_linear_vazia(lista) == 1)
-        return -2;
-
     if (lista->ordenada == 1)
         return busca_binaria(lista, elemento);
 
