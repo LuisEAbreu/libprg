@@ -42,5 +42,6 @@ int remover_lista_linear(lista_linear_t *lista, int valor);
 typedef struct no no_t;
 
 no_t *criar_lista_encadeada(int valor);
+void inserir_encadeada(no_t **inicio, int valor);
 
 #endif

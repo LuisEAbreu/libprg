@@ -14,7 +14,12 @@ no_t *criar_lista_encadeada(int valor) {
     return no;
 }
 
-// inserir
+void inserir_encadeada(no_t **inicio, int valor) {
+    no_t *novo_no = criar_lista_encadeada(valor);
+    novo_no->proximo = *inicio;
+    *inicio = novo_no;
+}
+
 // remover
 // buscar
 // destruir
