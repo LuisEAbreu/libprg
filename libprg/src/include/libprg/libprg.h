@@ -39,5 +39,6 @@ int inserir_lista_linear(lista_linear_t *lista, int elemento);
 int remover_lista_linear(lista_linear_t *lista, int valor);
 
 /*===== LISTA ENCADEADA =====*/
+typedef struct no no_t;
 
 #endif
