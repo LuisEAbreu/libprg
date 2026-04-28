@@ -41,4 +41,6 @@ int remover_lista_linear(lista_linear_t *lista, int valor);
 /*===== LISTA ENCADEADA =====*/
 typedef struct no no_t;
 
+no_t *criar_lista_encadeada(int valor);
+
 #endif

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "libprg/libprg.h"
 
 typedef struct no {
@@ -5,7 +6,14 @@ typedef struct no {
     no_t *proximo;
 } no_t;
 
-// criar
+no_t *criar_lista_encadeada(int valor) {
+    no_t *no = malloc(sizeof(no_t));
+    no->dado = valor;
+    no->proximo = NULL;
+
+    return no;
+}
+
 // inserir
 // remover
 // buscar
