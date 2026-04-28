@@ -102,7 +102,36 @@ int inserir_lista_linear(lista_linear_t *lista, int elemento) {
     return inserir_ordenada(lista, elemento);
 }
 
-// remover_lista_linear
+int remover_ordenada(lista_linear_t *lista, int indice) {
+    for (int i=indice; i<lista->tamanho-1; i++)
+        lista->elementos[i] = lista->elementos[i+1];
+
+    lista->tamanho--;
+    return 0;
+}
+
+int remover_nao_ordenada(lista_linear_t *lista, int indice) {
+    lista->elementos[indice] = lista->elementos[lista->tamanho - 1];
+    lista->tamanho--;
+
+    return 0;
+}
+
+int remover_lista_linear(lista_linear_t *lista, int valor) {
+    if (lista_linear_vazia(lista) == 1)
+        return -1;
+
+    int indice = buscar_lista_linear(lista, valor);
+
+    if (indice == -1)
+        return -2;
+
+    if (lista->ordenada == 1)
+        return remover_ordenada(lista, indice);
+
+    return remover_nao_ordenada(lista, indice);
+}
+
 // alterar_lista_linear
 // ordenar_lista_linear
 // combinar_lista_linear
