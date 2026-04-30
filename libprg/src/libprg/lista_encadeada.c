@@ -52,4 +52,12 @@ no_t *buscar_encadeada(no_t **inicio, int valor) {
     return NULL;
 }
 
-// destruir
+void destruir_encadeada(no_t **inicio) {
+    no_t *atual = *inicio;
+
+    while (atual != NULL) {
+        no_t *proximo = atual->proximo;
+        free(atual);
+        atual = proximo;
+    }
+}
