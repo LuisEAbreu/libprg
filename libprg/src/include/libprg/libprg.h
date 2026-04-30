@@ -43,5 +43,6 @@ typedef struct no no_t;
 
 no_t *criar_lista_encadeada(int valor);
 void inserir_encadeada(no_t **inicio, int valor);
+no_t *buscar_encadeada(no_t **inicio, int valor);
 
 #endif

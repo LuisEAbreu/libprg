@@ -21,5 +21,17 @@ void inserir_encadeada(no_t **inicio, int valor) {
 }
 
 // remover
-// buscar
+
+no_t *buscar_encadeada(no_t **inicio, int valor) {
+    no_t *atual = *inicio;
+
+    while (atual != NULL) {
+        if (atual->dado == valor)
+            return atual;
+
+        atual = atual->proximo;
+    }
+    return NULL;
+}
+
 // destruir
