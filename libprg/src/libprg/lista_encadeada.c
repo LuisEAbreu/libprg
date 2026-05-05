@@ -114,3 +114,13 @@ int remover_encadeada_dupla(nod_t **inicio, int valor) {
     }
     return 0;
 }
+
+void destruir_encadeada_dupla(nod_t **inicio) {
+    nod_t *atual = *inicio;
+
+    while (atual != NULL) {
+        nod_t *proximo = atual->proximo;
+        free(atual);
+        atual = proximo;
+    }
+}
