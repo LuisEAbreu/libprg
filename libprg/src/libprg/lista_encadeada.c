@@ -67,3 +67,12 @@ void destruir_encadeada(no_t **inicio) {
         atual = proximo;
     }
 }
+
+nod_t *criar_lista_encadeada_dupla(int valor) {
+    nod_t *no = malloc(sizeof(nod_t));
+    no->dado = valor;
+    no->anterior = NULL;
+    no->proximo = NULL;
+
+    return no;
+}

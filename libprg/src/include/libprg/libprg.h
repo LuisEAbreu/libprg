@@ -50,4 +50,6 @@ void destruir_encadeada(no_t **inicio);
 /*===== LISTA ENCADEADA DUPLA =====*/
 typedef struct nod nod_t;
 
+nod_t *criar_lista_encadeada_dupla(int valor);
+
 #endif
