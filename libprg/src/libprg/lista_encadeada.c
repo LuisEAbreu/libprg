@@ -83,3 +83,15 @@ void inserir_encadeada_dupla(nod_t **inicio, int valor) {
     (*inicio)->anterior = novo_no;
     *inicio = novo_no;
 }
+
+nod_t *buscar_encadeada_dupla(nod_t **inicio, int valor) {
+    nod_t *atual = *inicio;
+
+    while (atual != NULL) {
+        if (atual->dado == valor)
+            return atual;
+
+        atual = atual->proximo;
+    }
+    return NULL;
+}
