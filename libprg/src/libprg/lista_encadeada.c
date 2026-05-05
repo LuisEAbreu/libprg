@@ -76,3 +76,10 @@ nod_t *criar_lista_encadeada_dupla(int valor) {
 
     return no;
 }
+
+void inserir_encadeada_dupla(nod_t **inicio, int valor) {
+    nod_t *novo_no = criar_lista_encadeada_dupla(valor);
+    novo_no->proximo = *inicio;
+    (*inicio)->anterior = novo_no;
+    *inicio = novo_no;
+}

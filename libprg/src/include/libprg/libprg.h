@@ -51,5 +51,6 @@ void destruir_encadeada(no_t **inicio);
 typedef struct nod nod_t;
 
 nod_t *criar_lista_encadeada_dupla(int valor);
+void inserir_encadeada_dupla(nod_t **inicio, int valor);
 
 #endif
