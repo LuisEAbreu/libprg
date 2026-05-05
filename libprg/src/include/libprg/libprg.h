@@ -47,4 +47,7 @@ int remover_encadeada(no_t **inicio, int valor);
 no_t *buscar_encadeada(no_t **inicio, int valor);
 void destruir_encadeada(no_t **inicio);
 
+/*===== LISTA ENCADEADA DUPLA =====*/
+typedef struct nod nod_t;
+
 #endif

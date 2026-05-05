@@ -6,6 +6,12 @@ typedef struct no {
     no_t *proximo;
 } no_t;
 
+typedef struct nod {
+    int dado;
+    nod_t *anterior;
+    nod_t *proximo;
+} nod_t;
+
 no_t *criar_lista_encadeada(int valor) {
     no_t *no = malloc(sizeof(no_t));
     no->dado = valor;
