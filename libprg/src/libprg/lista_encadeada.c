@@ -95,3 +95,22 @@ nod_t *buscar_encadeada_dupla(nod_t **inicio, int valor) {
     }
     return NULL;
 }
+
+int remover_encadeada_dupla(nod_t **inicio, int valor) {
+    nod_t *atual = buscar_encadeada_dupla(inicio, valor);
+
+    if (atual != NULL) {
+        if (atual->anterior != NULL) // Se não é o primeiro nó
+            atual->anterior->proximo = atual->proximo;
+        else
+            *inicio = atual->proximo; // remove o primeiro
+
+        if (atual->proximo != NULL) // Se não é o último nó
+            atual->proximo->anterior = atual->anterior;
+
+        free(atual);
+
+        return 1;
+    }
+    return 0;
+}
