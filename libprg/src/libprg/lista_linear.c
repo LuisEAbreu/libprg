@@ -132,6 +132,10 @@ int remover_lista_linear(lista_linear_t *lista, int valor) {
     return remover_nao_ordenada(lista, indice);
 }
 
+int valor_indice_lista_linear(lista_linear_t *lista, int indice) {
+    return lista->elementos[indice];
+}
+
 int tamanho_lista_linear(lista_linear_t *lista) {
     return lista->tamanho;
 }

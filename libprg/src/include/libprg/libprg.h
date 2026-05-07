@@ -37,6 +37,7 @@ int lista_linear_vazia(lista_linear_t *lista);
 int buscar_lista_linear(lista_linear_t *lista, int elemento);
 int inserir_lista_linear(lista_linear_t *lista, int elemento);
 int remover_lista_linear(lista_linear_t *lista, int valor);
+int valor_indice_lista_linear(lista_linear_t *lista, int indice);
 int tamanho_lista_linear(lista_linear_t *lista);
 int destruir_lista_linear(lista_linear_t *lista);
 
