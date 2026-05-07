@@ -52,6 +52,17 @@ no_t *buscar_encadeada(no_t **inicio, int valor) {
     return NULL;
 }
 
+int valor_indice_encadeada(no_t **inicio, int indice) {
+    int i=0;
+    no_t *atual = *inicio;
+
+    while (i < indice) {
+        atual = atual->proximo;
+        i++;
+    }
+    return atual->dado;
+}
+
 void destruir_encadeada(no_t **inicio) {
     no_t *atual = *inicio;
 
