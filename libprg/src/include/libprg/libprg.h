@@ -49,6 +49,7 @@ void inserir_encadeada(no_t **inicio, int valor);
 int remover_encadeada(no_t **inicio, int valor);
 no_t *buscar_encadeada(no_t **inicio, int valor);
 int valor_indice_encadeada(no_t **inicio, int indice);
+int tamanho_encadeada(no_t **inicio);
 void destruir_encadeada(no_t **inicio);
 
 /*===== LISTA ENCADEADA DUPLA =====*/

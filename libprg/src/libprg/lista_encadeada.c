@@ -63,6 +63,17 @@ int valor_indice_encadeada(no_t **inicio, int indice) {
     return atual->dado;
 }
 
+int tamanho_encadeada(no_t **inicio) {
+    int i=0;
+    no_t *atual = *inicio;
+
+    while (atual != NULL) {
+        atual = atual->proximo;
+        i++;
+    }
+    return i;
+}
+
 void destruir_encadeada(no_t **inicio) {
     no_t *atual = *inicio;
 
