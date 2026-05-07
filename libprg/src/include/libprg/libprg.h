@@ -61,4 +61,6 @@ nod_t *buscar_encadeada_dupla(nod_t **inicio, int valor);
 int remover_encadeada_dupla(nod_t **inicio, int valor);
 void destruir_encadeada_dupla(nod_t **inicio);
 
+/*===== ALGORITMOS DE ORDENAÇÃO =====*/
+
 #endif
