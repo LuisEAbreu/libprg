@@ -63,4 +63,6 @@ void destruir_encadeada_dupla(nod_t **inicio);
 
 /*===== ALGORITMOS DE ORDENAÇÃO =====*/
 
+void bubble_sort(int vetor[], int tamanho);
+
 #endif
