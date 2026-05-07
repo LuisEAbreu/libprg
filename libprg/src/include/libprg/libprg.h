@@ -38,6 +38,7 @@ int buscar_lista_linear(lista_linear_t *lista, int elemento);
 int inserir_lista_linear(lista_linear_t *lista, int elemento);
 int remover_lista_linear(lista_linear_t *lista, int valor);
 int tamanho_lista_linear(lista_linear_t *lista);
+int destruir_lista_linear(lista_linear_t *lista);
 
 /*===== LISTA ENCADEADA =====*/
 typedef struct no no_t;

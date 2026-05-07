@@ -139,4 +139,10 @@ int tamanho_lista_linear(lista_linear_t *lista) {
 // alterar_lista_linear
 // ordenar_lista_linear
 // combinar_lista_linear
-// destruir_lista_linear
+
+int destruir_lista_linear(lista_linear_t *lista) {
+    free(lista->elementos);
+    free(lista);
+
+    return 0;
+}
