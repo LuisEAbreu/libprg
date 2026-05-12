@@ -65,5 +65,6 @@ void destruir_encadeada_dupla(nod_t **inicio);
 
 void bubble_sort(int vetor[], int tamanho);
 int *insertion_sort(int *vetor, int tamanho);
+int *selection_sort(int *vetor, int tamanho);
 
 #endif

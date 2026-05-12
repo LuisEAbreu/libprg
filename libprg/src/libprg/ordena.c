@@ -23,3 +23,18 @@ int *insertion_sort(int *vetor, int tamanho) {
         vetor[j + 1] = chave;
     }
 }
+
+int *selection_sort(int *vetor, int tamanho) {
+    for (int i = 0; i < tamanho - 1; i++) {
+        int min = i;
+        for (int j = i + 1; j < tamanho; j++) {
+            if (vetor[j] < vetor[min])
+                min = j;
+        }
+        if (i != min) {
+            int aux = vetor[i];
+            vetor[i] = vetor[min];
+            vetor[min] = aux;
+        }
+    }
+}
