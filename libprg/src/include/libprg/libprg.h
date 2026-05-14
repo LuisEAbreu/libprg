@@ -70,5 +70,6 @@ int *merge_sort(int *vetor, int esquerda, int direita);
 
 /*===== TABELA DE DISPERSÃO =====*/
 typedef struct noh noh_t;
+typedef struct dicionario dicionario_t;
 
 #endif

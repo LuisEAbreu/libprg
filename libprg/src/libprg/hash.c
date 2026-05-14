@@ -5,3 +5,8 @@ typedef struct noh {
     int valor;
     noh_t *proximo;
 } noh_t;
+
+typedef struct dicionario {
+    int tamanho;
+    noh_t **vetor;
+} dicionario_t;
