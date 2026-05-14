@@ -24,3 +24,12 @@ dicionario_t *criar_dicionario(int m) {
 
     return dicionario;
 }
+
+int hash(char *chave, int m) {
+    int soma = 0;
+
+    for (int i = 0; chave[i] != '\0'; i++)
+        soma += (i + 1) * chave[i];
+
+    return soma % m;
+}
