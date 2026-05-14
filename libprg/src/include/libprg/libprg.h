@@ -73,5 +73,6 @@ typedef struct noh noh_t;
 typedef struct dicionario dicionario_t;
 
 dicionario_t *criar_dicionario(int m);
+int inserir_hash(dicionario_t *dicionario, char *chave, int valor);
 
 #endif

@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "libprg/libprg.h"
 
 typedef struct noh {
@@ -32,4 +34,26 @@ int hash(char *chave, int m) {
         soma += (i + 1) * chave[i];
 
     return soma % m;
+}
+
+int inserir_hash(dicionario_t *dicionario, char *chave, int valor) {
+    int indice = hash(chave, dicionario->tamanho);
+    noh_t *no = malloc(sizeof(noh_t));
+
+    if (no == NULL)
+        return -1;
+
+    no->chave = strdup(chave);
+
+    if (no->chave == NULL) {
+        free(no);
+        return -1;
+    }
+    no->valor = valor;
+    // TODO tratar colisões
+    no->proximo = NULL;
+
+    dicionario->vetor[indice] = no;
+
+    return 0;
 }
