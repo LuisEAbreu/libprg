@@ -16,6 +16,18 @@ noa_t *criar_no(int dado) {
     return no;
 }
 
-// adicionar
+noa_t *adicionar_noa(noa_t *raiz, int dado) {
+    if (raiz == NULL)
+        return criar_no(dado);
+
+    if (dado > raiz->dado)
+        raiz->direita = adicionar_noa(raiz->direita, dado);
+
+    if (dado < raiz->dado)
+        raiz->esquerda = adicionar_noa(raiz->esquerda, dado);
+
+    return raiz;
+}
+
 // remover
 // destruir
