@@ -78,7 +78,7 @@ int inserir_hash(dicionario_t *dicionario, char *chave, int valor);
 /*===== ÁRVORE =====*/
 typedef struct noa noa_t;
 
-noa_t *criar_no(int dado);
+noa_t *criar_noa(int dado);
 noa_t *adicionar_noa(noa_t *raiz, int dado);
 
 #endif

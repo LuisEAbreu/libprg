@@ -7,7 +7,7 @@ typedef struct noa {
     noa_t *direita;
 } noa_t;
 
-noa_t *criar_no(int dado) {
+noa_t *criar_noa(int dado) {
     noa_t *no = malloc(sizeof(noa_t));
     no->dado = dado;
     no->esquerda = NULL;
@@ -18,7 +18,7 @@ noa_t *criar_no(int dado) {
 
 noa_t *adicionar_noa(noa_t *raiz, int dado) {
     if (raiz == NULL)
-        return criar_no(dado);
+        return criar_noa(dado);
 
     if (dado > raiz->dado)
         raiz->direita = adicionar_noa(raiz->direita, dado);
