@@ -40,4 +40,12 @@ void travessia_emordem(noa_t *raiz) {
     }
 }
 
+void travessia_preordem(noa_t *raiz) {
+    if (raiz != NULL) {
+        printf("%d ", raiz->dado);
+        travessia_preordem(raiz->esquerda);
+        travessia_preordem(raiz->direita);
+    }
+}
+
 // destruir

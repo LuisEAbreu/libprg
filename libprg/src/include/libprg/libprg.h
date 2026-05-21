@@ -81,5 +81,6 @@ typedef struct noa noa_t;
 noa_t *criar_noa(int dado);
 noa_t *adicionar_noa(noa_t *raiz, int dado);
 void travessia_emordem(noa_t *raiz);
+void travessia_preordem(noa_t *raiz);
 
 #endif
