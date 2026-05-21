@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
@@ -30,4 +31,13 @@ noa_t *adicionar_noa(noa_t *raiz, int dado) {
 }
 
 // remover
+
+void travessia_emordem(noa_t *raiz) {
+    if (raiz != NULL) {
+        travessia_emordem(raiz->esquerda);
+        printf("%d ", raiz->dado);
+        travessia_emordem(raiz->direita);
+    }
+}
+
 // destruir
