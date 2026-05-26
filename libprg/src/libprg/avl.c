@@ -42,6 +42,9 @@ noavl_t *adicionar_noavl(noavl_t *raiz, int dado) {
     if (dado < raiz->dado)
         raiz->esquerda = adicionar_noavl(raiz->esquerda, dado);
 
+    raiz->altura = 1 + max(altura_avl(raiz->esquerda), altura_avl(raiz->direita));
+    raiz = balancear_avl(raiz);
+
     return raiz;
 }
 
