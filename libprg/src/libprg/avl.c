@@ -90,3 +90,21 @@ noavl_t* rotacao_dupla_esquerda(noavl_t *raiz) {
 
     return rotacao_esquerda(raiz);
 }
+
+noavl_t* balancear_avl(noavl_t* raiz) {
+    int fb = fator_balanceamento(raiz);
+
+    if (fb > 1) {
+        if (fator_balanceamento(raiz->esquerda) > 0)
+            return rotacao_direita(raiz);
+
+        return rotacao_dupla_direita(raiz);
+    }
+    if (fb < -1) {
+        if (fator_balanceamento(raiz->direita) < 0)
+            return rotacao_esquerda(raiz);
+
+        return rotacao_dupla_esquerda(raiz);
+    }
+    return raiz;
+}
