@@ -85,5 +85,6 @@ void travessia_preordem(noa_t *raiz);
 void travessia_posordem(noa_t *raiz);
 
 /*===== ÁRVORE AVL =====*/
+typedef struct noavl noavl_t;
 
 #endif
