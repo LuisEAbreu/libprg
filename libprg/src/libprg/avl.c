@@ -76,3 +76,11 @@ noavl_t* rotacao_direita(noavl_t* raiz) {
     // retorna nova raiz
     return filho_direita;
 }
+
+noavl_t* rotacao_dupla_direita(noavl_t *raiz) {
+    // rotação simples à esquerda no filho esquerdo da raiz
+    raiz->esquerda = rotacao_esquerda(raiz->esquerda);
+
+    // rotação simples à direita da raiz
+    return rotacao_direita(raiz);
+}
