@@ -88,5 +88,6 @@ void travessia_posordem(noa_t *raiz);
 typedef struct noavl noavl_t;
 
 noavl_t *criar_noavl(int dado);
+int altura_avl(noavl_t *raiz);
 
 #endif

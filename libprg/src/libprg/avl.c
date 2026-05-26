@@ -17,3 +17,9 @@ noavl_t *criar_noavl(int dado) {
 
     return no;
 }
+
+int altura_avl(noavl_t *raiz) {
+    if (raiz == NULL)
+        return 0;
+    return raiz->altura;
+}
