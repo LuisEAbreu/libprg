@@ -29,3 +29,16 @@ int fator_balanceamento(noavl_t *raiz) {
         return 0;
     return altura_avl(raiz->esquerda) - altura_avl(raiz->direita);
 }
+
+noavl_t *adicionar_noavl(noavl_t *raiz, int dado) {
+    if (raiz == NULL)
+        return criar_noavl(dado);
+
+    if (dado > raiz->dado)
+        raiz->direita = adicionar_noavl(raiz->direita, dado);
+
+    if (dado < raiz->dado)
+        raiz->esquerda = adicionar_noavl(raiz->esquerda, dado);
+
+    return raiz;
+}
