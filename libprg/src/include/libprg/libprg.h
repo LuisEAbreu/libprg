@@ -91,5 +91,6 @@ noavl_t *criar_noavl(int dado);
 int altura_avl(noavl_t *raiz);
 int fator_balanceamento(noavl_t *raiz);
 noavl_t *adicionar_noavl(noavl_t *raiz, int dado);
+noavl_t* rotacao_esquerda(noavl_t* raiz);
 
 #endif

@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
+#define max(a, b) (a > b ? a : b);
+
 typedef struct noavl {
     int dado;
     noavl_t *esquerda;
@@ -41,4 +43,20 @@ noavl_t *adicionar_noavl(noavl_t *raiz, int dado) {
         raiz->esquerda = adicionar_noavl(raiz->esquerda, dado);
 
     return raiz;
+}
+
+noavl_t* rotacao_esquerda(noavl_t* raiz) {
+    noavl_t* filho_direita = raiz->direita;
+    noavl_t* neto_esquerda = filho_direita->esquerda;
+
+    // rotaciona
+    filho_direita->esquerda = raiz;
+    raiz->direita = neto_esquerda;
+
+    // atualiza alturas
+    raiz->altura = max(altura_avl(raiz->esquerda), altura_avl(raiz->direita)) + 1;
+    filho_direita->altura = max(altura_avl(filho_direita->esquerda), altura_avl(filho_direita->direita)) + 1;
+
+    // retorna nova raiz
+    return filho_direita;
 }
