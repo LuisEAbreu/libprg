@@ -84,3 +84,9 @@ noavl_t* rotacao_dupla_direita(noavl_t *raiz) {
     // rotação simples à direita da raiz
     return rotacao_direita(raiz);
 }
+
+noavl_t* rotacao_dupla_esquerda(noavl_t *raiz) {
+    raiz->direita = rotacao_direita(raiz->direita);
+
+    return rotacao_esquerda(raiz);
+}
