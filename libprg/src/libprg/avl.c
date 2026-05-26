@@ -23,3 +23,9 @@ int altura_avl(noavl_t *raiz) {
         return 0;
     return raiz->altura;
 }
+
+int fator_balanceamento(noavl_t *raiz) {
+    if (raiz == NULL)
+        return 0;
+    return altura_avl(raiz->esquerda) - altura_avl(raiz->direita);
+}
