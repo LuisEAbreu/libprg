@@ -60,3 +60,19 @@ noavl_t* rotacao_esquerda(noavl_t* raiz) {
     // retorna nova raiz
     return filho_direita;
 }
+
+noavl_t* rotacao_direita(noavl_t* raiz) {
+    noavl_t* filho_direita = raiz->esquerda;
+    noavl_t* neto_esquerda = filho_direita->direita;
+
+    // rotaciona
+    filho_direita->direita = raiz;
+    raiz->esquerda = neto_esquerda;
+
+    // atualiza alturas
+    raiz->altura = max(altura_avl(raiz->esquerda), altura_avl(raiz->direita)) + 1;
+    filho_direita->altura = max(altura_avl(filho_direita->esquerda), altura_avl(filho_direita->direita)) + 1;
+
+    // retorna nova raiz
+    return filho_direita;
+}
