@@ -48,6 +48,39 @@ noavl_t *adicionar_noavl(noavl_t *raiz, int dado) {
     return raiz;
 }
 
+noavl_t* remover_noavl(noavl_t *raiz, int dado) {
+    if (raiz == NULL)
+        return NULL;
+
+    if (dado < raiz->dado)
+        raiz->esquerda = remover_noavl(raiz->esquerda, dado);
+    else if (dado > raiz->dado)
+        raiz->direita = remover_noavl(raiz->direita, dado);
+    else {
+        if (raiz->esquerda == NULL || raiz->direita == NULL) {
+            noavl_t *temp = raiz->esquerda != NULL ? raiz->esquerda : raiz->direita; // testa se na esq. tem filho, se tiver, pega ele. Caso não, pega o da direita
+            if (temp == NULL){
+                free(raiz);
+                return NULL;
+            }
+            free(raiz);
+            return temp;
+        }   // 2 filhos
+        // Encontra o menor valor da subárvore da direita
+        noavl_t *temp = raiz->direita;
+        while (temp && temp->esquerda != NULL) {
+            temp = temp->esquerda;
+        }
+        raiz->dado = temp->dado;
+        raiz->direita = remover_noavl(raiz->direita, temp->dado);
+    }
+    if (raiz != NULL) {
+        raiz->altura = 1 + max(altura_avl(raiz->esquerda), altura_avl(raiz->direita));
+        raiz = balancear_avl(raiz);
+    }
+    return raiz;
+}
+
 noavl_t* rotacao_esquerda(noavl_t* raiz) {
     noavl_t* filho_direita = raiz->direita;
     noavl_t* neto_esquerda = filho_direita->esquerda;
