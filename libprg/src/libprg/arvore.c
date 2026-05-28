@@ -30,7 +30,34 @@ noa_t *adicionar_noa(noa_t *raiz, int dado) {
     return raiz;
 }
 
-// remover
+noa_t* remover_noa(noa_t *raiz, int dado) {
+    if (raiz == NULL)
+        return NULL;
+
+    if (dado < raiz->dado)
+        raiz->esquerda = remover_noa(raiz->esquerda, dado);
+    else if (dado > raiz->dado)
+        raiz->direita = remover_noa(raiz->direita, dado);
+    else {
+        if (raiz->esquerda == NULL || raiz->direita == NULL) {
+            noa_t *temp = raiz->esquerda != NULL ? raiz->esquerda : raiz->direita; // testa se na esq. tem filho, se tiver, pega ele. Caso não, pega o da direita
+            if (temp == NULL){
+                free(raiz);
+                return NULL;
+            }
+            free(raiz);
+            return temp;
+        }   // 2 filhos
+        // Encontra o menor valor da subárvore da direita
+        noa_t *temp = raiz->direita;
+        while (temp && temp->esquerda != NULL) {
+            temp = temp->esquerda;
+        }
+        raiz->dado = temp->dado;
+        raiz->direita = remover_noa(raiz->direita, temp->dado);
+    }
+    return raiz;
+}
 
 void travessia_emordem(noa_t *raiz) {
     if (raiz != NULL) {
