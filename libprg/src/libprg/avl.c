@@ -15,7 +15,7 @@ noavl_t *criar_noavl(int dado) {
     no->dado = dado;
     no->esquerda = NULL;
     no->direita = NULL;
-    no->altura = 0;
+    no->altura = 1;
 
     return no;
 }
