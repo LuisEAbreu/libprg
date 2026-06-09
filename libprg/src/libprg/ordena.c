@@ -83,3 +83,34 @@ int *merge_sort(int *vetor, int esquerda, int direita) {
     }
     return vetor;
 }
+
+void trocar_posicao(int *a, int *b) {
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
+int particiona(int *vetor, int inicio, int fim) {
+    int pivo = vetor[fim];
+    int i = inicio - 1;
+
+    for (int j = inicio; j <= fim - 1; j++) {
+        if (vetor[j] <= pivo) {
+            i++;
+            trocar_posicao(&vetor[i], &vetor[j]);
+        }
+    }
+    i++;
+    trocar_posicao(&vetor[i], &vetor[fim]);
+
+    return i;
+}
+
+int *quick_sort(int *vetor, int inicio, int fim) {
+    if (inicio < fim) {
+        int pivo = particiona(vetor, inicio, fim);
+        quick_sort(vetor, inicio, pivo - 1);
+        quick_sort(vetor, pivo + 1, fim);
+    }
+    return vetor;
+}
