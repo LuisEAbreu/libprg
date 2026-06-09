@@ -10,6 +10,7 @@ int *bubble_sort(int *vetor, int tamanho) {
             }
         }
     }
+    return vetor;
 }
 
 int *insertion_sort(int *vetor, int tamanho) {
@@ -22,6 +23,7 @@ int *insertion_sort(int *vetor, int tamanho) {
         }
         vetor[j + 1] = chave;
     }
+    return vetor;
 }
 
 int *selection_sort(int *vetor, int tamanho) {
@@ -37,6 +39,7 @@ int *selection_sort(int *vetor, int tamanho) {
             vetor[min] = aux;
         }
     }
+    return vetor;
 }
 
 int *merge(int *vetor, int esquerda, int meio, int direita) {
