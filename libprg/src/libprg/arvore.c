@@ -83,4 +83,10 @@ void travessia_posordem(noa_t *raiz) {
     }
 }
 
-// destruir
+void destruir_noa(noa_t *raiz) {
+    if (raiz != NULL) {
+        destruir_noa(raiz->esquerda);
+        destruir_noa(raiz->direita);
+        free(raiz);
+    }
+}
