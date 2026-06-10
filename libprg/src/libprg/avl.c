@@ -1,7 +1,8 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
-#define max(a, b) (a > b ? a : b);
+#define max(a, b) (a > b ? a : b)
 
 typedef struct noavl {
     int dado;
@@ -143,4 +144,12 @@ noavl_t* balancear_avl(noavl_t* raiz) {
         return rotacao_dupla_esquerda(raiz);
     }
     return raiz;
+}
+
+void travessia_emordem_avl(noavl_t* raiz) {
+    if (raiz != NULL) {
+        travessia_emordem_avl(raiz->esquerda);
+        printf("%d ", raiz->dado);
+        travessia_emordem_avl(raiz->direita);
+    }
 }
