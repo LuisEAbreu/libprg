@@ -21,7 +21,7 @@ dicionario_t *criar_dicionario(int m) {
         return NULL;
 
     dicionario = malloc(sizeof(dicionario_t));
-    dicionario->vetor = malloc(m * sizeof(noh_t*));
+    dicionario->vetor = calloc(m, sizeof(noh_t*));
     dicionario->tamanho = m;
 
     return dicionario;
