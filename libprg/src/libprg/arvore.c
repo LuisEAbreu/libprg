@@ -99,3 +99,12 @@ int maior_valor_noa(noa_t *raiz) {
 
     return atual->dado;
 }
+
+int menor_valor_noa(noa_t *raiz) {
+    noa_t *atual = raiz;
+
+    while (atual->esquerda != NULL)
+        atual = atual->esquerda;
+
+    return atual->dado;
+}
