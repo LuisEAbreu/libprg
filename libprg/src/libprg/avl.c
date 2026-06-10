@@ -153,3 +153,11 @@ void travessia_emordem_avl(noavl_t* raiz) {
         travessia_emordem_avl(raiz->direita);
     }
 }
+
+void travessia_preordem_avl(noavl_t* raiz) {
+    if (raiz != NULL) {
+        printf("%d ", raiz->dado);
+        travessia_preordem_avl(raiz->esquerda);
+        travessia_preordem_avl(raiz->direita);
+    }
+}
