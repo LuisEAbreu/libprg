@@ -161,3 +161,11 @@ void travessia_preordem_avl(noavl_t* raiz) {
         travessia_preordem_avl(raiz->direita);
     }
 }
+
+void travessia_posordem_avl(noavl_t* raiz) {
+    if (raiz != NULL) {
+        travessia_posordem_avl(raiz->esquerda);
+        travessia_posordem_avl(raiz->direita);
+        printf("%d ", raiz->dado);
+    }
+}
