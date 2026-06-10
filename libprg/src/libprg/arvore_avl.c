@@ -169,3 +169,16 @@ void travessia_posordem_avl(noavl_t* raiz) {
         printf("%d ", raiz->dado);
     }
 }
+
+void imprimir_nivel_avl(noavl_t *raiz, int nivel) {
+    if (raiz == NULL)
+        return;
+
+    if (nivel == 0) {
+        printf("%d ", raiz->dado);
+        return;
+    }
+
+    imprimir_nivel_avl(raiz->esquerda, nivel - 1);
+    imprimir_nivel_avl(raiz->direita, nivel - 1);
+}
