@@ -90,3 +90,12 @@ void destruir_noa(noa_t *raiz) {
         free(raiz);
     }
 }
+
+int maior_valor_noa(noa_t *raiz) {
+    noa_t *atual = raiz;
+
+    while (atual->direita != NULL)
+        atual = atual->direita;
+
+    return atual->dado;
+}
