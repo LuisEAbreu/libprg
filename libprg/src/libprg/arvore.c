@@ -108,3 +108,16 @@ int menor_valor_noa(noa_t *raiz) {
 
     return atual->dado;
 }
+
+int altura_noa(noa_t *raiz) {
+    if (raiz == NULL)
+        return -1;
+
+    int altura_esquerda = altura_noa(raiz->esquerda);
+    int altura_direita = altura_noa(raiz->direita);
+
+    if (altura_esquerda > altura_direita)
+        return 1 + altura_esquerda;
+
+    return 1 + altura_direita;
+}

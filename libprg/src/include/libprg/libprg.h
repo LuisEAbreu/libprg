@@ -92,6 +92,7 @@ void travessia_posordem(noa_t *raiz);
 void destruir_noa(noa_t *raiz);
 int maior_valor_noa(noa_t *raiz);
 int menor_valor_noa(noa_t *raiz);
+int altura_noa(noa_t *raiz);
 
 /*===== ÁRVORE AVL =====*/
 typedef struct noavl noavl_t;
