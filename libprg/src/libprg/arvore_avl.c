@@ -189,3 +189,11 @@ void travessia_largura_avl(noavl_t *raiz) {
     for (int i = 0; i <= altura; i++)
         imprimir_nivel_avl(raiz, i);
 }
+
+void destruir_noavl(noavl_t *raiz) {
+    if (raiz != NULL) {
+        destruir_noavl(raiz->esquerda);
+        destruir_noavl(raiz->direita);
+        free(raiz);
+    }
+}

@@ -112,5 +112,6 @@ void travessia_preordem_avl(noavl_t* raiz);
 void travessia_posordem_avl(noavl_t* raiz);
 void imprimir_nivel_avl(noavl_t *raiz, int nivel);
 void travessia_largura_avl(noavl_t *raiz);
+void destruir_noavl(noavl_t *raiz);
 
 #endif
