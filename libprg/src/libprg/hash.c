@@ -95,3 +95,14 @@ int remover_hash(dicionario_t *dicionario, char *chave) {
 
     return -1;
 }
+
+void imprimir_hash(dicionario_t *dicionario) {
+    for (int i = 0; i < dicionario->tamanho; i++) {
+        noh_t *atual = dicionario->vetor[i];
+
+        while (atual != NULL) {
+            printf("%s -> %d\n", atual->chave, atual->valor);
+            atual = atual->proximo;
+        }
+    }
+}

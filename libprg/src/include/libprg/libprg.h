@@ -77,6 +77,7 @@ dicionario_t *criar_dicionario(int m);
 int inserir_hash(dicionario_t *dicionario, char *chave, int valor);
 int buscar_hash(dicionario_t *dicionario, char *chave);
 int remover_hash(dicionario_t *dicionario, char *chave);
+void imprimir_hash(dicionario_t *dicionario);
 
 /*===== ÁRVORE =====*/
 typedef struct noa noa_t;
