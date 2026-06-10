@@ -182,3 +182,10 @@ void imprimir_nivel_avl(noavl_t *raiz, int nivel) {
     imprimir_nivel_avl(raiz->esquerda, nivel - 1);
     imprimir_nivel_avl(raiz->direita, nivel - 1);
 }
+
+void travessia_largura_avl(noavl_t *raiz) {
+    int altura = altura_avl(raiz);
+
+    for (int i = 0; i <= altura; i++)
+        imprimir_nivel_avl(raiz, i);
+}
