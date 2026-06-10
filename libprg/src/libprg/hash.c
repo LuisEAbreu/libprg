@@ -106,3 +106,23 @@ void imprimir_hash(dicionario_t *dicionario) {
         }
     }
 }
+
+void destruir_hash(dicionario_t *dicionario) {
+    if (dicionario == NULL)
+        return;
+
+    for (int i = 0; i < dicionario->tamanho; i++) {
+        noh_t *atual = dicionario->vetor[i];
+
+        while (atual != NULL) {
+            noh_t *proximo = atual->proximo;
+
+            free(atual->chave);
+            free(atual);
+
+            atual = proximo;
+        }
+    }
+    free(dicionario->vetor);
+    free(dicionario);
+}
