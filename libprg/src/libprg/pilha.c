@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "libprg/libprg.h"
 
 typedef struct pilha {
     int *elementos;
@@ -37,7 +38,10 @@ int empilhar(pilha_t *pilha, int valor) {
 }
 
 int topo_pilha(pilha_t *pilha) {
-    return pilha->topo;
+    if (pilha_vazia(pilha))
+        return -1;
+
+    return pilha->elementos[pilha->topo];
 }
 
 int tamanho_pilha(pilha_t *pilha) {
