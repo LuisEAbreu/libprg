@@ -93,6 +93,7 @@ void destruir_noa(noa_t *raiz);
 int maior_valor_noa(noa_t *raiz);
 int menor_valor_noa(noa_t *raiz);
 int altura_noa(noa_t *raiz);
+void travessia_emordem_ids(noa_t *raiz, int *vetor, int *indice);
 
 /*===== ÁRVORE AVL =====*/
 typedef struct noavl noavl_t;

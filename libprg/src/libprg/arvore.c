@@ -121,3 +121,14 @@ int altura_noa(noa_t *raiz) {
 
     return 1 + altura_direita;
 }
+
+void travessia_emordem_ids(noa_t *raiz, int *vetor, int *indice) {
+    if (raiz != NULL) {
+        travessia_emordem_ids(raiz->esquerda,vetor,indice);
+
+        vetor[*indice] = raiz->dado;
+        (*indice)++;
+
+        travessia_emordem_ids(raiz->direita,vetor,indice);
+    }
+}
